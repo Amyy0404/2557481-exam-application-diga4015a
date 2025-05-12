@@ -1,26 +1,25 @@
-/* Import your fonts (make sure to include the actual font files or links) */
 @font-face {
   font-family: 'KleinCondensed1';
-  src: url('./fonts/KleinCondensed1.woff2') format('woff2'),
-       url('./fonts/KleinCondensed1.woff') format('woff');
+  src: url('./fonts/KleinCondensed1.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap; /* This ensures text remains visible during font loading */
 }
 
 @font-face {
   font-family: 'KleinCondensed2';
-  src: url('./fonts/KleinCondensed2.woff2') format('woff2'),
-       url('./fonts/KleinCondensed2.woff') format('woff');
+  src: url('./fonts/KleinCondensed2.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'KleinCondensed3';
-  src: url('./fonts/KleinCondensed3.woff2') format('woff2'),
-       url('./fonts/KleinCondensed3.woff') format('woff');
+  src: url('./fonts/KleinCondensed3.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 .home-container {
