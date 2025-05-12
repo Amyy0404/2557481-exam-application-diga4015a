@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'KleinCondensed1';
-  src: url('./fonts/KleinCondensed1.ttf') format('truetype');
+  src: url('../Fonts/KleinCondensed1.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap; /* This ensures text remains visible during font loading */
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'KleinCondensed2';
-  src: url('./fonts/KleinCondensed2.ttf') format('truetype');
+  src: url('../Fonts/KleinCondensed2.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -16,58 +16,64 @@
 
 @font-face {
   font-family: 'KleinCondensed3';
-  src: url('./fonts/KleinCondensed3.ttf') format('truetype');
+  src: url('../Fonts/KleinCondensed3.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
+/* ... (keep all your existing @font-face rules) ... */
+
 .home-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #f5f5dc; /* Beige background */
+  background-color: #e0d1bb;
 }
 
 .hero-section {
-  position: relative;
-  height: 50vh; /* Half of the viewport height */
+  height: 60vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Changed from center to move content up */
   align-items: center;
   text-align: center;
   padding: 2rem;
   color: white;
-  background-image: url('./images/background-image.jpg'); /* Replace with your image path */
+  background-image: url('../Images/landscape.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  min-height: 500px;
 }
 
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for better text visibility */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  margin-top: -100px; /* Pulls content up */
+  transform: translateY(20%); /* Fine-tune vertical position */
 }
 
 .hero-section h1 {
   position: relative;
+  color: #3e5f60;
   font-family: 'KleinCondensed1', sans-serif;
   font-size: 4rem;
-  margin-bottom: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  margin-bottom: 1rem; /* Reduced from 10rem */
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  pointer-events: none; /* Prevents text movement on button click */
+}
+
+.learn-more-container {
+  margin-top: 5rem; /* Space between h1 and button */
+  min-height: 80px; /* Reserve space for expanded text */
 }
 
 .learn-more {
   position: relative;
   font-family: 'KleinCondensed2', sans-serif;
-  padding: 0.8rem 2rem;
+  padding: 5px;
   background-color: transparent;
   color: white;
   border: 2px solid white;
@@ -76,79 +82,164 @@
   font-size: 1.2rem;
   transition: all 0.3s ease;
   z-index: 1;
-}
-
-.learn-more:hover {
-  background-color: white;
-  color: black;
+  margin: 0 auto; /* Center button */
+  opacity: 80%;
 }
 
 .more-text {
-  position: relative;
+  position: absolute;
+  width: 100%;
+  padding-top: 1rem;
+  color: white;
   font-family: 'KleinCondensed3', sans-serif;
-  max-width: 600px;
-  margin: 1rem auto;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 8px;
-  z-index: 1;
+  animation: fadeIn 0.3s ease-out;
+  opacity: 90%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .feature-buttons {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  padding: 2rem;
-  margin-top: -50px; /* Pulls the cards up onto the image */
+  padding: 1rem;
+  margin-top: -100px;
   position: relative;
   z-index: 2;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .feature-card {
   background-color: white;
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 0.1rem;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); /* Right-bottom shadow */
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-card[onclick*="/search"] .icon-circle {
+  background: url('../Images/SearchIcon.png') no-repeat center center;
+  background-size: 60%;
+}
+
+.feature-card[onclick*="/discover"] .icon-circle {
+  background: url('../Images/DiscoverIcon.png') no-repeat center center;
+  background-size: 60%;
+}
+
+.feature-card[onclick*="/deadzones"] .icon-circle {
+  background: url('../Images/DeadZonesIcon.png') no-repeat center center;
+  background-size: 60%;
+}
+
+.feature-card[onclick*="/helplines"] .icon-circle {
+  background: url('../Images/HelplinesIcon.png') no-repeat center center;
+  background-size: 60%;
+}
+
+/* Base icon styles (keep these) */
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Remove if you want square icons */
+  margin: 0 auto 1rem;
+  background-blend-mode: multiply; /* Optional color effect */
+  transition: all 0.3s ease;
+}
+
+.feature-card h3 {
+  font-family: 'KleinCondensed3', sans-serif; /* Your custom font */
+  font-size: 1.5rem; /* Adjust size as needed */
+  margin-bottom: 0.8rem;
+  color: #333;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+.feature-card p {
+  font-family: 'KleinCondensed2', sans-serif; /* Your custom font */
+  font-size: 0.9rem; /* Adjust size as needed */
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  padding: 0 0.5rem; /* Side padding */
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-}
-
-.icon-circle {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #f5f5dc; /* Matching the beige background */
-  margin: 0 auto 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.feature-card h3 {
-  font-family: 'KleinCondensed2', sans-serif;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.feature-card p {
-  font-family: 'KleinCondensed3', sans-serif;
-  color: #666;
-  font-size: 0.9rem;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+  .feature-buttons {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    margin-top: -80px;
+  }
+  
+  .navbar {
+    padding: 15px;
+  }
+  
+  .nav-links button {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-section h1 {
     font-size: 2.5rem;
+    margin-bottom: 0.5rem;
   }
   
   .feature-buttons {
     grid-template-columns: 1fr;
-    margin-top: -30px;
+    margin-top: -50px;
+    max-width: 400px;
+    gap: 1rem;
+  }
+  
+  .navbar {
+    padding: 10px;
+  }
+  
+  .nav-links button {
+    font-size: 11px;
+    margin-right: 5px;
+  }
+  
+  .login-button {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: 50vh;
+    min-height: 400px;
+    padding-top: 60px;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .learn-more {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
   }
 }
