@@ -1,0 +1,155 @@
+/* Import your fonts (make sure to include the actual font files or links) */
+@font-face {
+  font-family: 'KleinCondensed1';
+  src: url('./fonts/KleinCondensed1.woff2') format('woff2'),
+       url('./fonts/KleinCondensed1.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KleinCondensed2';
+  src: url('./fonts/KleinCondensed2.woff2') format('woff2'),
+       url('./fonts/KleinCondensed2.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KleinCondensed3';
+  src: url('./fonts/KleinCondensed3.woff2') format('woff2'),
+       url('./fonts/KleinCondensed3.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f5dc; /* Beige background */
+}
+
+.hero-section {
+  position: relative;
+  height: 50vh; /* Half of the viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  background-image: url('./images/background-image.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for better text visibility */
+}
+
+.hero-section h1 {
+  position: relative;
+  font-family: 'KleinCondensed1', sans-serif;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.learn-more {
+  position: relative;
+  font-family: 'KleinCondensed2', sans-serif;
+  padding: 0.8rem 2rem;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.learn-more:hover {
+  background-color: white;
+  color: black;
+}
+
+.more-text {
+  position: relative;
+  font-family: 'KleinCondensed3', sans-serif;
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.feature-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  margin-top: -50px; /* Pulls the cards up onto the image */
+  position: relative;
+  z-index: 2;
+}
+
+.feature-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #f5f5dc; /* Matching the beige background */
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-card h3 {
+  font-family: 'KleinCondensed2', sans-serif;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.feature-card p {
+  font-family: 'KleinCondensed3', sans-serif;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .feature-buttons {
+    grid-template-columns: 1fr;
+    margin-top: -30px;
+  }
+}

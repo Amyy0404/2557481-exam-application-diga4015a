@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Navbar";
-import "./Home.css";
+//import Navbar from "./Navbar";
+import "../Styles/Home.css";
 
 function Home() {
   const navigate = useNavigate();
@@ -13,7 +13,6 @@ function Home() {
 
   return (
     <div className="home-container">
-      <Navbar />
 
       <div className="hero-section">
         <h1>EXPLORE SOUTH AFRICA<br />WITH EASE</h1>
