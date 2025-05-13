@@ -129,34 +129,32 @@
   align-items: center;
 }
 
-.feature-card[onclick*="/search"] .icon-circle {
-  background: url('../Images/SearchIcon.png') no-repeat center center;
-  background-size: 60%;
-}
-
-.feature-card[onclick*="/discover"] .icon-circle {
-  background: url('../Images/DiscoverIcon.png') no-repeat center center;
-  background-size: 60%;
-}
-
-.feature-card[onclick*="/deadzones"] .icon-circle {
-  background: url('../Images/DeadZonesIcon.png') no-repeat center center;
-  background-size: 60%;
-}
-
-.feature-card[onclick*="/helplines"] .icon-circle {
-  background: url('../Images/HelplinesIcon.png') no-repeat center center;
-  background-size: 60%;
-}
-
-/* Base icon styles (keep these) */
 .icon-circle {
   width: 60px;
   height: 60px;
-  border-radius: 50%; /* Remove if you want square icons */
+  border-radius: 50%;
   margin: 0 auto 1rem;
-  background-blend-mode: multiply; /* Optional color effect */
-  transition: all 0.3s ease;
+  background-color: #f8e8ce;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+/* Specific icon classes */
+.icon-search {
+  background-image: url('../Images/SearchIcon.png');
+}
+
+.icon-discover {
+  background-image: url('../Images/DiscoverIcon.png');
+}
+
+.icon-deadzones {
+  background-image: url('../Images/DeadZonesIcon.png');
+}
+
+.icon-helplines {
+  background-image: url('../Images/HelplinesIcon.png');
 }
 
 .feature-card h3 {
