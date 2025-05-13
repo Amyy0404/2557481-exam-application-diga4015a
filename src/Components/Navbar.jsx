@@ -1,9 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../AuthContext";
 import "../Styles/Navbar.css";
 
 function Navbar() {
   const navigate = useNavigate();
+  const { user, logout } = useAuth();
+
+  const handleAuthButtonClick = () => {
+    if (user) {
+      navigate("/profile");
+    } else {
+      navigate("/login");
+    }
+  };
 
   return (
     <nav className="navbar">
@@ -11,7 +21,9 @@ function Navbar() {
         <button onClick={() => navigate("/")}>HOME</button>
         <button onClick={() => navigate("/about")}>ABOUT</button>
       </div>
-      <button className="login-button" onClick={() => navigate("/login")}></button>
+      <button className="login-button" onClick={handleAuthButtonClick}>
+        {user ? "PROFILE" : "LOGIN"}
+      </button>
     </nav>
   );
 }

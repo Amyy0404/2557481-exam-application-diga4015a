@@ -2,44 +2,44 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../AuthContext";
 
-function Login() {
+function Register() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { user, login } = useAuth();
-
-  // If user is already logged in, redirect to profile
-  React.useEffect(() => {
-    if (user) {
-      navigate("/profile");
-    }
-  }, [user, navigate]);
+  const { login } = useAuth();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically call your authentication API
-    // For demo purposes, we'll just simulate a successful login
-    if (email && password) {
+    // Here you would typically call your registration API
+    // For demo purposes, we'll just simulate a successful registration
+    if (name && email && password) {
+      // After successful registration, log the user in
       login({
         email,
-        name: "Test User", // This would come from your API
+        name,
       });
       navigate("/profile");
     } else {
-      setError("Please enter both email and password");
+      setError("Please fill in all fields");
     }
   };
 
-  const handleRegisterRedirect = () => {
-    navigate("/register");
-  };
-
   return (
-    <div className="login-container">
-      <h1>Login</h1>
+    <div className="register-container">
+      <h1>Register</h1>
       {error && <p className="error">{error}</p>}
       <form onSubmit={handleSubmit}>
+        <div>
+          <label>Name:</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
         <div>
           <label>Email:</label>
           <input
@@ -58,16 +58,10 @@ function Login() {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">Register</button>
       </form>
-      <p>
-        Don't have an account?{" "}
-        <button onClick={handleRegisterRedirect} className="link-button">
-          Register here
-        </button>
-      </p>
     </div>
   );
 }
 
-export default Login;
+export default Register;
