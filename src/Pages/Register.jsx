@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Auth/AuthContext";
 import { Link } from "react-router-dom";
+import "../Styles/Register.css";
 
 function Register() {
   const [firstName, setFirstName] = useState("");
