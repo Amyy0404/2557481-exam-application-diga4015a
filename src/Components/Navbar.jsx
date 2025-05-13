@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../AuthContext";
+import { useAuth } from "../Auth/AuthContext";
 import "../Styles/Navbar.css";
 
 function Navbar() {
