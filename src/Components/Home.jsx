@@ -34,7 +34,7 @@ function Home() {
   <div className="feature-card" onClick={() => navigate("/search")}>
     <div className="icon-circle icon-search"></div>
     <h3>SEARCH</h3>
-    <p>Looking for something specific?</p>
+    <p>Farmstalls, restaurants, One-Stops, Mechanics and more...</p>
   </div>
   <div className="feature-card" onClick={() => navigate("/discover")}>
     <div className="icon-circle icon-discover"></div>
@@ -44,12 +44,12 @@ function Home() {
   <div className="feature-card" onClick={() => navigate("/deadzones")}>
     <div className="icon-circle icon-deadzones"></div>
     <h3>DEADZONES</h3>
-    <p>Know when there is no signal</p>
+    <p>Farmstalls, restaurants, One-Stops, Mechanics and more...</p>
   </div>
   <div className="feature-card" onClick={() => navigate("/helplines")}>
     <div className="icon-circle icon-helplines"></div>
     <h3>HELPLINES</h3>
-    <p>Emergency numbers for each province</p>
+    <p>Farmstalls, restaurants, One-Stops, Mechanics and more...</p>
   </div>
 </div>
 </div>
