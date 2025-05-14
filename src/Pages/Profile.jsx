@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Auth/AuthContext";
-import "./Profile.css"; // Make sure this file exists and is linked
+import "../Styles/Profile.css"; 
 
 function Profile() {
   const { user, logout } = useAuth();
@@ -17,19 +17,16 @@ function Profile() {
   }
 
   return (
-    <div className="profile-container">
-      <div className="profile-left">
-        <h1>Your Profile.</h1>
-        <p className="user-name">{user.name}</p>
-        <p className="user-email">{user.email}</p>
-        <button className="logout-button" onClick={handleLogout}>
-          Log out
-        </button>
-      </div>
-      <div className="profile-right">
-        <div className="image-placeholder"></div>
-      </div>
-    </div>
+<div className="profile-wrapper">
+  <div className="profile-info">
+    <h1>Your Profile.</h1>
+    <p>{user.name}</p>
+    <p>{user.email}</p>
+    <button onClick={handleLogout}>Log out</button>
+  </div>
+  <div className="image-placeholder"></div>
+</div>
+
   );
 }
 
