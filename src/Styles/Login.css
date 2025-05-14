@@ -1,41 +1,140 @@
-/* Add to your Styles/Login.css or create new CSS files */
-.login-container, .register-container, .profile-container {
-  max-width: 400px;
-  margin: 2rem auto;
-  padding: 2rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* My Fonts */
+
+@font-face {
+  font-family: 'KleinCondensed1';
+  src: url('../Fonts/KleinCondensed1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
 }
 
-.login-container form, .register-container form {
+@font-face {
+  font-family: 'KleinCondensed2';
+  src: url('../Fonts/KleinCondensed2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'KleinCondensed3';
+  src: url('../Fonts/KleinCondensed3.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'KleinCondensed4';
+  src: url('../Fonts/KleinCondensed4.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* CSS For Login Page */
+
+.login-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.login-image {
+  flex: 1;
+  background-image: url('../Images/portrait.png'); 
+  background-size: cover;
+  background-position: center;
+  box-shadow: 5px 0px 15px 0px rgba(0,0,0,0.75);
+}
+
+.login-section {
+  flex: 1;
+  background-color: #e0d1bb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-content {
+  width: 70%;
+  max-width: 400px;
+}
+
+.login-heading {
+  font-family: 'KleinCondensed1', sans-serif;
+  font-size: 50px;
+  color: #10587b;
+  margin-bottom: 10px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.register-prompt {
+  font-family: 'KleinCondensed2', sans-serif;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 30px;
+  letter-spacing: 2px; 
+}
+
+.register-prompt a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 
-.login-container label, .register-container label {
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #558258;
+  font-weight: 500;
+  font-family: 'KleinCondensed4', sans-serif;
 }
 
-.login-container input, .register-container input {
+.input-group input {
   width: 100%;
-  padding: 0.5rem;
+  padding: 12px 15px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  opacity: 80%;
+  font-family: 'KleinCondensed4', sans-serif;
+  letter-spacing: 2px; 
 }
 
 .error {
-  color: red;
-  margin-bottom: 1rem;
+  color: #e74c3c;
+  margin-bottom: 20px;
+  font-size: 14px;
 }
 
-.link-button {
-  background: none;
+.login-btn {
+  background-color: #014d74;
+  color: white;
   border: none;
-  color: blue;
-  text-decoration: underline;
+  padding: 12px 25px;
+  font-size: 14px;
+  border-radius: 20px;
   cursor: pointer;
-  padding: 0;
+  width: 40%;
+  text-transform: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-family: 'KleinCondensed3', sans-serif;
+  letter-spacing: 2.5px;
+}
+
+.login-btn:hover {
+  background-color: #13658e;
 }
