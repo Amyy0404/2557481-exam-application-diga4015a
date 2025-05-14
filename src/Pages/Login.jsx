@@ -54,7 +54,7 @@ function Login() {
               />
             </div>
             
-            <div className="input-group">
+            <div className="inputt-group">
               <label>Password</label>
               <input
                 type="password"
