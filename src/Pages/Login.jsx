@@ -44,7 +44,7 @@ function Login() {
           {error && <p className="error">{error}</p>}
           
           <form onSubmit={handleSubmit} className="login-form">
-            <div className="input-group">
+            <div className="inputt-group">
               <label>Email</label>
               <input
                 type="email"

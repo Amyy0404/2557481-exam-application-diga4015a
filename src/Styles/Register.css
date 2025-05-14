@@ -77,13 +77,13 @@
 .login-prompt {
   font-family: 'KleinCondensed2', sans-serif;
   font-size: 14px;
-  color: #2c4849;
+  color: #356077;
   margin-bottom: 30px;
   letter-spacing: 2px; 
 }
 
 .login-prompt a {
-  color: #3498db;
+  color: #16719e;
   text-decoration: none;
 }
 
@@ -110,7 +110,7 @@
   display: block;
   margin-bottom: 8px;
   font-size: 14px;
-  color: #558258;
+  color: #356077;
   font-weight: 500;
   font-family: 'KleinCondensed4', sans-serif;
   letter-spacing: 2.5px; 
@@ -151,5 +151,5 @@
 }
 
 .create-account-btn:hover {
-  background-color: #13658e;
+  background-color: #16719e;
 }
