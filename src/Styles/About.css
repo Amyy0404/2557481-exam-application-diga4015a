@@ -1,0 +1,133 @@
+/* My Fonts */
+
+@font-face {
+  font-family: 'KleinCondensed1';
+  src: url('../Fonts/KleinCondensed1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+
+@font-face {
+  font-family: 'KleinCondensed2';
+  src: url('../Fonts/KleinCondensed2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'KleinCondensed3';
+  src: url('../Fonts/KleinCondensed3.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'KleinCondensed4';
+  src: url('../Fonts/KleinCondensed4.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* CSS For About Page */
+
+.about-page {
+  margin: 0;
+  padding: 0;
+}
+
+.about-page .hero-section {
+  position: relative;
+  background: #ccc url('../Images/landscape3.png') no-repeat center center;
+  background-size: cover;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.about-page .hero-section h1 {
+  font-size: 3rem;
+  font-family: 'KleinCondensed1', sans-serif;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  margin: 0;
+  color: #ffffff;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.about-page .quote {
+  font-family: 'KleinCondensed4', sans-serif;
+  letter-spacing: 1.5px;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #ffffff;
+  max-width: 600px;
+}
+
+.about-page .image-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: -60px;
+  z-index: 2;
+  position: relative;
+}
+
+.about-page .image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-box.box1 {
+  background-image: url("../Images/smallL1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.image-box.box2 {
+  background-image: url("../Images/smallP1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.image-box.box3 {
+  background-image: url("../Images/smallL2.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.image-box.box4 {
+  background-image: url("../Images/smallp2.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.about-page .story-section {
+  padding: 60px 40px;
+  background-color: #e0d1bb;
+}
+
+.about-page .story-section h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.about-page .story-columns {
+  display: flex;
+  gap: 40px;
+}
+
+.about-page .story-columns p {
+  flex: 1;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}

@@ -89,6 +89,10 @@
   opacity: 80%;
 }
 
+.learn-more:hover {
+  opacity: 100%;
+}
+
 .more-text {
   position: absolute;
   width: 100%;
