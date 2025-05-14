@@ -25,7 +25,7 @@
 }
 
 @font-face {
-  font-family: 'KleinCondensed3';
+  font-family: 'KleinCondensed4';
   src: url('../Fonts/KleinCondensed4.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -39,7 +39,6 @@
   background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
-  padding-top: 80px; /* Space for navbar */
   font-family: 'Arial', sans-serif;
 }
 
@@ -48,20 +47,23 @@
   width: 100%;
   padding: 40px;
   margin-left: 10%;
-  margin-top: -2%;
+  margin-top: 5.5%;
 }
 
 .join-text {
   font-family: 'KleinCondensed1', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: #10587b;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 2px; 
+  margin-bottom: 0;
+  padding-bottom: 1px;
 }
 
 .create-account {
+  margin-top: 0;
   font-family: 'KleinCondensed1', sans-serif;
   font-size: 50px;
   margin-bottom: 5px;
@@ -89,7 +91,7 @@
 
 .name-fields {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   margin-bottom: 10px;
 }
 
@@ -120,6 +122,8 @@
   font-size: 14px;
   background-color: white;
   opacity: 80%;
+  font-family: 'KleinCondensed4', sans-serif;
+  letter-spacing: 2px; 
 }
 
 .error {
@@ -140,7 +144,7 @@
   text-transform: none;
   font-weight: 500;
   letter-spacing: 0.5px;
-  font-family: 'KleinCondensed4', sans-serif;
+  font-family: 'KleinCondensed3', sans-serif;
   letter-spacing: 2.5px; 
 }
 
