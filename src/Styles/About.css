@@ -72,46 +72,38 @@
 
 .about-page .image-row {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: -60px;
-  z-index: 2;
+  justify-content: flex-start;
+  gap: 300px;
+  margin-top: -100px;
+  margin-left: 20%;
+}
+
+.about-page .image-box {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  overflow: visible;
 }
 
 .about-page .image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 230px; 
+  height: auto; 
+  max-width: none; 
+  position: absolute;
+  top: -50%; 
 }
 
-.image-box.box1 {
-  background-image: url("../Images/smallL1.png");
-  background-size: cover;
-  background-position: center;
-}
-
-.image-box.box2 {
-  background-image: url("../Images/smallP1.png");
-  background-size: cover;
-  background-position: center;
-}
-
-.image-box.box3 {
-  background-image: url("../Images/smallL2.png");
-  background-size: cover;
-  background-position: center;
-}
-
-.image-box.box4 {
-  background-image: url("../Images/smallp2.png");
-  background-size: cover;
-  background-position: center;
+.about-page .image-box img.small-p1, 
+.about-page .image-box img.small-p2 {
+  top: -90%; 
 }
 
 .about-page .story-section {
-  padding: 60px 40px;
+  padding: 40px 120px;
   background-color: #e0d1bb;
+  margin-top: 230px;
 }
 
 .about-page .story-section h2 {
@@ -119,6 +111,7 @@
   font-weight: bold;
   text-align: left;
   margin-bottom: 20px;
+  font-family: 'KleinCondensed2', sans-serif;
 }
 
 .about-page .story-columns {
