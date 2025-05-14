@@ -97,6 +97,7 @@
   font-family: 'KleinCondensed3', sans-serif;
   animation: fadeIn 0.3s ease-out;
   opacity: 90%;
+  letter-spacing: 1px;
 }
 
 @keyframes fadeIn {

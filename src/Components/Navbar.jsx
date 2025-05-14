@@ -21,11 +21,14 @@ function Navbar() {
         <button onClick={() => navigate("/")}>HOME</button>
         <button onClick={() => navigate("/about")}>ABOUT</button>
       </div>
-      <button className="login-button" onClick={handleAuthButtonClick}>
-        {user ? "PROFILE" : "LOGIN"}
-      </button>
+
+      <div className="login-button-container">
+        <button className="login-button" onClick={handleAuthButtonClick}></button>
+        <span className="login-label">{user ? "PROFILE" : "LOGIN"}</span>
+      </div>
     </nav>
   );
 }
 
 export default Navbar;
+
