@@ -52,12 +52,12 @@
 }
 
 .about-page .hero-section h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-family: 'KleinCondensed1', sans-serif;
   letter-spacing: 2.5px;
   font-weight: bold;
-  margin: 0;
-  color: #ffffff;
+  margin: 10px;
+  color: #f0e6d9;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
@@ -66,7 +66,7 @@
   letter-spacing: 1.5px;
   margin-top: 10px;
   font-size: 1rem;
-  color: #ffffff;
+  color: #f0e6d9;
   max-width: 600px;
 }
 
@@ -93,17 +93,19 @@
   max-width: none; 
   position: absolute;
   top: -50%; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
 }
 
 .about-page .image-box img.small-p1, 
 .about-page .image-box img.small-p2 {
-  top: -90%; 
+  top: -50px; 
 }
 
 .about-page .story-section {
   padding: 40px 120px;
   background-color: #e0d1bb;
-  margin-top: 230px;
+  margin-top: 200px;
 }
 
 .about-page .story-section h2 {
@@ -112,15 +114,18 @@
   text-align: left;
   margin-bottom: 20px;
   font-family: 'KleinCondensed2', sans-serif;
+  color: #3a5c5d;
 }
 
 .about-page .story-columns {
   display: flex;
-  gap: 40px;
+  gap: 60px;
 }
 
 .about-page .story-columns p {
   flex: 1;
   line-height: 1.6;
   font-size: 0.95rem;
+  font-family: 'KleinCondensed4', sans-serif;
+  color: #2c4849;
 }
