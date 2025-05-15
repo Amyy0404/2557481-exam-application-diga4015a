@@ -7,7 +7,7 @@ const places = [
     tags: ["Attraction", "Hidden Gem"],
     description: "Food, gifts, instagrammable area, niche",
     rating: 4.5,
-    image: "../Images/Data/Farmstall1.png"
+    image: "/Public/Images/Data/Farmstall1.png"
   },
   {
     id: 2,
