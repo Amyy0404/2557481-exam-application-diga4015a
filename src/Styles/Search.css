@@ -1,0 +1,12 @@
+/* Add to Search.css or global styles */
+.search-page {
+  padding: 1rem;
+}
+
+.place-card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 0;
+  max-width: 500px;
+}
