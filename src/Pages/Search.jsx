@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import places from "../Data/Places";
 import "../Styles/Search.css";
-import searchIcon from "../Images/Icons/SearchIcon.png";
-import landscape6 from "../Images/General/landscape6.png";
+import searchIcon from "../Images/Icons/SearchIcon2.png";
 
 const categories = [
   "Restaurants", "Open 24/7", "Police Stations", "Gas Stations",
@@ -29,7 +28,6 @@ function Search() {
   return (
     <div className="search-page">
       <div className="hero">
-        <img src={landscape6} alt="Hero" className="hero-img" />
         <h1 className="hero-title">FIND WHAT YOU NEED</h1>
       </div>
 
@@ -42,7 +40,6 @@ function Search() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button className="search-button">Search</button>
       </div>
 
       <div className="subheading">FILTER BY CATEGORY</div>
@@ -64,10 +61,10 @@ function Search() {
             <img src={place.image} alt={place.name} />
             <h2>{place.name}</h2>
             <p><strong>Province:</strong> {place.province}</p>
-            <p><strong>Category:</strong> {place.category}</p>
-            <p><strong>Tags:</strong> {place.tags.join(", ")}</p>
-            <p>{place.description}</p>
-            <p><strong>Rating:</strong> ⭐ {place.rating}</p>
+            <p>⭐ {place.rating}</p>
+            <p className="place-description">
+              {place.description}
+            </p>
           </div>
         ))}
       </div>

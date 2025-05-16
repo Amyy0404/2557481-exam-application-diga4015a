@@ -13,7 +13,6 @@ function Home() {
 
   return (
     <div className="home-container">
-
       <div className="hero-section">
   <div className="hero-content">
     <h1>EXPLORE SOUTH AFRICA<br />WITH EASE</h1>

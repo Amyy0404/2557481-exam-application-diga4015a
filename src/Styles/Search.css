@@ -34,37 +34,44 @@
 
 /* CSS For About Page */
 
+body {
+  background-color: #abba9b;
+  margin: 0;               
+  padding: 0;
+}
+
 .search-page {
-  font-family: Arial, sans-serif;
-  background-color: #f5f0e6;
+  background-color: #abba9b;
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
 .hero {
-  position: relative;
-  height: 50vh;
-  width: 100%;
-  overflow: hidden;
-}
-
-.hero-img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover; /* Try 'contain' if 'cover' crops too much */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  background-image: url('../Images/General/landscape2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .hero-title {
+  margin-top: 80px;
+  color: #edf2ee;
+  font-family: 'KleinCondensed1', sans-serif;
   position: relative;
-  color: black;
   font-size: 3rem;
   font-weight: bold;
-  text-align: center;
+  letter-spacing: 4px;
 }
 
 .search-wrapper {
@@ -81,33 +88,33 @@
   font-size: 1.2rem;
   border-radius: 12px;
   border: 1px solid #ccc;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  opacity: 90%;
 }
 
 .search-icon {
   position: absolute;
-  left: calc(20% + 1rem); 
-  width: 20px;
-  height: 20px;
+  left: calc(17.2%); 
+  width: 30px;
+  height: 30px;
   pointer-events: none;
-}
-
-.search-button {
-  margin-left: -3rem;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  border: none;
-  background-color: #00aaff;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
+  z-index: 1;
 }
 
 .subheading {
+  font-family: 'KleinCondensed2', sans-serif;
   margin-top: 2rem;
   font-size: 1.2rem;
-  font-weight: bold;
-  color: #555;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.search-input::placeholder {
+  font-family: 'KleinCondensed2', sans-serif;
+  font-size: 1rem;    
+  color: #999;                 
+  font-style: italic;        
+  letter-spacing: 1px;       
 }
 
 .filter-buttons {
@@ -119,40 +126,53 @@
 }
 
 .filter-button {
+  font-family: 'KleinCondensed2', sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;     
   padding: 0.6rem 1rem;
   border: 1px solid #ccc;
-  border-radius: 20px;
+  border-radius: 7px;
   cursor: pointer;
   background-color: white;
-  color: #333;
+  color: #50684c;
   transition: 0.3s;
 }
 
 .filter-button.active {
-  background-color: #00aaff;
+  background-color: #50684c;
   color: white;
-  border-color: #00aaff;
+  border-color: #50684c;
 }
 
 .results {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  padding: 2rem;
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 2%;
 }
 
 .place-card {
-  background: white;
+  font-family: 'KleinCondensed4', sans-serif;
+  letter-spacing: 1.5px;  
+  color: #394936;
+  background: rgb(238, 238, 238);
   border: 1px solid #ccc;
   border-radius: 12px;
   padding: 1rem;
-  margin: 1rem 0;
-  width: 90%;
-  max-width: 600px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  width: 90%; 
+  max-width: 400px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .place-card img {
   width: 100%;
   border-radius: 10px;
+}
+
+.place-description {
+  padding: 1rem;
+  text-align: justify;
+  line-height: 1.4;
 }
