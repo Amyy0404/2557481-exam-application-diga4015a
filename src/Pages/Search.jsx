@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import places from "../Data/Places";
 import "../Styles/Search.css";
 import searchIcon from "../Images/Icons/SearchIcon.png";
+import landscape6 from "../Images/General/landscape6.png";
 
 const categories = [
   "Restaurants", "Open 24/7", "Police Stations", "Gas Stations",
@@ -28,6 +29,7 @@ function Search() {
   return (
     <div className="search-page">
       <div className="hero">
+        <img src={landscape6} alt="Hero" className="hero-img" />
         <h1 className="hero-title">FIND WHAT YOU NEED</h1>
       </div>
 
