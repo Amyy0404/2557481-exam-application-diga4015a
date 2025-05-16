@@ -42,7 +42,7 @@
   text-align: center;
   padding: 2rem;
   color: white;
-  background-image: url('../Images/landscape.png');
+  background-image: url('../Images/General/landscape.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -149,19 +149,19 @@
 }
 
 .icon-search {
-  background-image: url('../Images/SearchIcon.png');
+  background-image: url('../Images/Icons/SearchIcon.png');
 }
 
 .icon-discover {
-  background-image: url('../Images/DiscoverIcon.png');
+  background-image: url('../Images/Icons/DiscoverIcon.png');
 }
 
 .icon-deadzones {
-  background-image: url('../Images/DeadZonesIcon.png');
+  background-image: url('../Images/Icons/DeadZonesIcon.png');
 }
 
 .icon-helplines {
-  background-image: url('../Images/HelplinesIcon.png');
+  background-image: url('../Images/Icons/HelplinesIcon.png');
 }
 
 .feature-card h3 {

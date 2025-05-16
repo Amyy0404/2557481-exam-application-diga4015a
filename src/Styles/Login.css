@@ -53,7 +53,7 @@ html, body {
 
 .login-image {
   flex: 1;
-  background-image: url('../Images/portrait.png'); 
+  background-image: url('../Images/General/portrait.png'); 
   background-size: cover;
   background-position: center;
   box-shadow: 8px 0 15px -5px rgba(0, 0, 0, 0.25);

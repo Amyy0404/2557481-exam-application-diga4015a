@@ -12,16 +12,16 @@ function About() {
 
       <div className="image-row">
         <div className="image-box">
-          <img src={require("../Images/smallL1.png")} alt="img1" />
+          <img src={require("../Images/About/smallL1.png")} alt="img1" />
         </div>
         <div className="image-box">
-          <img className="small-p1" src={require("../Images/smallP1.png")} alt="img2" />
+          <img className="small-p1" src={require("../Images/About/smallP1.png")} alt="img2" />
         </div>
         <div className="image-box">
-          <img src={require("../Images/smallL2.png")} alt="img3" />
+          <img src={require("../Images/About/smallL2.png")} alt="img3" />
         </div>
         <div className="image-box">
-          <img className="small-p2" src={require("../Images/smallp2.png")} alt="img4" />
+          <img className="small-p2" src={require("../Images/About/smallp2.png")} alt="img4" />
         </div>
       </div>
 

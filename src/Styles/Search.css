@@ -1,12 +1,120 @@
-/* Add to Search.css or global styles */
+/* Layout container */
 .search-page {
-  padding: 1rem;
+  font-family: Arial, sans-serif;
+  background-color: #f5f0e6; /* Beige background */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Hero image container */
+.hero {
+  height: 50vh;
+  background: url('../Images/General/landscape4.png') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hero title */
+.hero-title {
+  color: black;
+  font-size: 3rem;
+  font-weight: 900;
+  z-index: 2;
+}
+
+.search-wrapper {
+  position: relative;
+  margin-top: -2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  width: 60%;
+  padding: 1rem 3.5rem 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: calc(20% + 1rem); /* Adjust based on search box width */
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+/* Search button */
+.search-button {
+  margin-left: -3rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  background-color: #00aaff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Subheading */
+.subheading {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Category toggle buttons */
+.filter-buttons {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.filter-button {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: white;
+  color: #333;
+  transition: 0.3s;
+}
+
+.filter-button.active {
+  background-color: #00aaff;
+  color: white;
+  border-color: #00aaff;
+}
+
+/* Results styling */
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
 }
 
 .place-card {
+  background: white;
   border: 1px solid #ccc;
   border-radius: 12px;
   padding: 1rem;
   margin: 1rem 0;
-  max-width: 500px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.place-card img {
+  width: 100%;
+  border-radius: 10px;
 }

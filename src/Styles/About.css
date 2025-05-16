@@ -41,7 +41,7 @@
 
 .about-page .hero-section {
   position: relative;
-  background: #ccc url('../Images/landscape3.png') no-repeat center center;
+  background: #ccc url('../Images/General/landscape3.png') no-repeat center center;
   background-size: cover;
   height: 50vh;
   display: flex;

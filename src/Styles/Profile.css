@@ -83,7 +83,7 @@
 
 .image-placeholder {
   flex: 1;
-  background-image: url('../Images/portrait2.png');
+  background-image: url('../Images/General/portrait2.png');
   background-size: cover;
   background-position: center;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
