@@ -4,13 +4,17 @@ import "../Styles/Search.css";
 import searchIcon from "../Images/Icons/SearchIcon2.png";
 
 const categories = [
-  "Restaurants", "Open 24/7", "Police Stations", "Gas Stations",
-  "Farm Stalls", "Hidden Gems", "Point of Interest", "Mechanics", "Attractions"
+  "Restaurants", "Open 24/7", "Police Stations", "Gas Stations", "Local Cuisine",
+  "Farm Stalls", "Hidden Gems", "Mechanics", "Attractions", "Family-Friendly", "Sleep"
 ];
+
+// Get unique provinces
+const provinces = [...new Set(places.map(place => place.province))];
 
 function Search() {
   const [query, setQuery] = useState("");
   const [activeFilters, setActiveFilters] = useState([]);
+  const [selectedProvinces, setSelectedProvinces] = useState([]);
 
   const toggleFilter = (filter) => {
     setActiveFilters((prev) =>
@@ -20,9 +24,18 @@ function Search() {
     );
   };
 
+  const toggleProvince = (province) => {
+    setSelectedProvinces((prev) =>
+      prev.includes(province)
+        ? prev.filter(p => p !== province)
+        : [...prev, province]
+    );
+  };
+
   const filteredPlaces = places.filter(place =>
     place.name.toLowerCase().includes(query.toLowerCase()) &&
-    (activeFilters.length === 0 || activeFilters.some(tag => place.tags.includes(tag) || place.category === tag))
+    (activeFilters.length === 0 || activeFilters.some(tag => place.tags.includes(tag) || place.category === tag)) &&
+    (selectedProvinces.length === 0 || selectedProvinces.includes(place.province))
   );
 
   return (
@@ -55,6 +68,19 @@ function Search() {
         ))}
       </div>
 
+      <div className="subheading">FILTER BY PROVINCE</div>
+      <div className="filter-buttons">
+        {provinces.map((prov) => (
+          <button
+            key={prov}
+            className={`filter-button ${selectedProvinces.includes(prov) ? "active" : ""}`}
+            onClick={() => toggleProvince(prov)}
+          >
+            {prov}
+          </button>
+        ))}
+      </div>
+
       <div className="results">
         {filteredPlaces.map((place) => (
           <div key={place.id} className="place-card">
@@ -73,3 +99,4 @@ function Search() {
 }
 
 export default Search;
+

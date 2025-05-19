@@ -129,3 +129,72 @@
   font-family: 'KleinCondensed4', sans-serif;
   color: #2c4849;
 }
+
+/* Responsive CSS */
+
+@media (max-width: 1024px) {
+  .about-page .hero-section h1 {
+    font-size: 2.8rem;
+  }
+
+  .about-page .quote {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+
+  .about-page .image-box img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page .hero-section {
+    height: 40vh;
+  }
+
+  .about-page .hero-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-page .image-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 110px;
+    margin-top: 0px;
+    margin-bottom: -100px;
+    margin-left: 0;
+    width:auto;
+  }
+
+  .about-page .story-columns {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-page .story-section {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page .hero-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-page .quote {
+    font-size: 0.85rem;
+  }
+
+  .about-page .image-box img {
+    width: 150px;
+    top: -30px;
+  }
+
+  .about-page .story-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .about-page .story-columns p {
+    font-size: 0.85rem;
+  }
+}

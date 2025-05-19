@@ -51,3 +51,13 @@
   font-family: 'KleinCondensed4', sans-serif;
   letter-spacing: 2px;
 }
+
+.navbar button,
+.navbar .login-label {
+  color: #2c4849;
+}
+
+.search-navbar button,
+.search-navbar .login-label {
+  color: #edf2ee; 
+}

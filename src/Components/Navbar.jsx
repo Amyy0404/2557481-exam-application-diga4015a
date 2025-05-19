@@ -1,11 +1,12 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../Auth/AuthContext";
 import "../Styles/Navbar.css";
 
 function Navbar() {
   const navigate = useNavigate();
-  const { user, logout } = useAuth();
+  const location = useLocation();
+  const { user } = useAuth();
 
   const handleAuthButtonClick = () => {
     if (user) {
@@ -15,8 +16,11 @@ function Navbar() {
     }
   };
 
+  // Check if current page is the Search page
+  const isSearchPage = location.pathname === "/search";
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isSearchPage ? "search-navbar" : ""}`}>
       <div className="nav-links">
         <button onClick={() => navigate("/")}>HOME</button>
         <button onClick={() => navigate("/about")}>ABOUT</button>
@@ -31,4 +35,5 @@ function Navbar() {
 }
 
 export default Navbar;
+
 
