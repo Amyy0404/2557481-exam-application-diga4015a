@@ -8,7 +8,6 @@ const categories = [
   "Farm Stalls", "Hidden Gems", "Mechanics", "Attractions", "Family-Friendly", "Sleep"
 ];
 
-// Get unique provinces
 const provinces = [...new Set(places.map(place => place.province))];
 
 function Search() {
@@ -37,6 +36,11 @@ function Search() {
     (activeFilters.length === 0 || activeFilters.some(tag => place.tags.includes(tag) || place.category === tag)) &&
     (selectedProvinces.length === 0 || selectedProvinces.includes(place.province))
   );
+
+  const resetFilters = () => {
+  setActiveFilters([]);
+  setSelectedProvinces([]);
+  };
 
   return (
     <div className="search-page">
@@ -79,6 +83,12 @@ function Search() {
             {prov}
           </button>
         ))}
+      </div>
+
+      <div className="reset-button-wrapper">
+        <button className="reset-button" onClick={resetFilters}>
+          Reset Filters
+        </button>
       </div>
 
       <div className="results">

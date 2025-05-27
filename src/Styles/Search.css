@@ -32,7 +32,7 @@
   font-display: swap;
 }
 
-/* CSS For About Page */
+/* CSS For Search Page */
 
 body {
   background-color: #abba9b;
@@ -144,6 +144,28 @@ body {
   border-color: #50684c;
 }
 
+.reset-button-wrapper {
+  margin-top: 1.5rem;
+}
+
+.reset-button {
+  font-family: 'KleinCondensed2', sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.reset-button:hover {
+  background-color: white;
+  color: #50684c;
+}
+
 .results {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
@@ -175,4 +197,71 @@ body {
   padding: 1rem;
   text-align: justify;
   line-height: 1.4;
+}
+
+/* Responsive CSS */
+
+@media (max-width: 992px) {
+  .hero {
+    height: 45vh;
+    min-height: 400px;
+    padding: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    margin-top: 60px; 
+  }
+
+  .filter-button {
+    padding: 0.5rem 0.8rem; 
+    font-size: 14px;
+  }
+
+  .results {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  .reset-button {
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: 35vh;
+    min-height: 300px;
+    padding: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    margin-top: 50px; 
+  }
+
+  .filter-button {
+    padding: 0.4rem 0.6rem;
+    font-size: 13px;
+  }
+
+  .results {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .search-input {
+    width: 80%;
+    font-size: 1rem;
+    padding: 0.8rem 2.5rem 0.8rem 2rem;
+  }
+
+  .search-icon {
+    display: none; 
+  }
+  
+  .reset-button {
+    font-size: 13px;
+    padding: 0.4rem 0.8rem;
+  }
 }
