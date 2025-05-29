@@ -1,0 +1,29 @@
+.discover-page {
+  background-color: #007BFF; /* Bootstrap blue or pick your preferred */
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+.discover-heading {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.discover-subheading {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.map-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 4px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+}

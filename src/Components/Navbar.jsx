@@ -16,7 +16,6 @@ function Navbar() {
     }
   };
 
-  // Check if current page is the Search page
   const isSearchPage = location.pathname === "/search";
 
   return (
