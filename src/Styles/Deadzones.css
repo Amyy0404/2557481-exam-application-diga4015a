@@ -26,14 +26,8 @@
 
 /* CSS For Discover Page */
 
-body {
-  background-color: #d3d1bd;
-  margin: 0;               
-  padding: 0;
-}
-
-.discover-page {
-  background-image: url('../Images/General/landscape6.png');
+.deadzones-page {
+  background-image: url('../Images/General/landscape5.png');
   background-repeat: no-repeat;
   background-size: auto;           
   background-position: top center; 
@@ -44,12 +38,12 @@ body {
   padding: 2rem;
   box-sizing: border-box;
   color: white;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  font-family: 'Arial', sans-serif;
 }
 
-.discover-heading {
+.deadzones-heading {
   margin-top: 50px;
-  color: #4d7c8b;
+  color: #e99014;
   font-family: 'KleinCondensed1', sans-serif;
   position: relative;
   font-size: 3rem;
@@ -57,11 +51,11 @@ body {
   letter-spacing: 4px;
 }
 
-.discover-subheading {
+.deadzones-subheading {
   font-family: 'KleinCondensed2', sans-serif;
   margin-top: 1.5rem;
   font-size: 1.2rem;
-  color: #3f6572;
+  color: #cc7d0e;
   letter-spacing: 2px;
 }
 
@@ -72,22 +66,4 @@ body {
   overflow: hidden;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3); 
   border: 4px solid #ffffff;
-}
-
-.place-details {
-  font-family: 'KleinCondensed4', sans-serif;
-  letter-spacing: 1.5px;  
-  background-color: #557e8c;
-  padding: 1rem;
-  border-radius: 10px;
-  max-width: 500px;
-  margin: 17rem auto 0 auto;
-  color: #ffffff;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-}
-
-.place-info {
-  padding: 1rem;
-  text-align: justify;
-  line-height: 1.4;
 }
