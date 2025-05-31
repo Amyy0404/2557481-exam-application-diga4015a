@@ -43,10 +43,8 @@ body {
   height: auto;                    
   padding: 2rem;
   box-sizing: border-box;
-  color: white;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 3);
-  z-index: 1;
 }
+
 
 .discover-heading {
   margin-top: 50px;
@@ -91,4 +89,39 @@ body {
   padding: 1rem;
   text-align: justify;
   line-height: 1.4;
+}
+
+.custom-marker-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.custom-marker-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.custom-tooltip {
+  font-family: 'KleinCondensed4', sans-serif;
+  letter-spacing: 1.5px; 
+  position: absolute;
+  bottom: 50px;
+  background-color: #3f6572;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 14px;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.custom-marker-wrapper:hover .custom-tooltip {
+  opacity: 1;
 }

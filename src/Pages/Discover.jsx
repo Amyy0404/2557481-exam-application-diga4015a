@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, OverlayView  } from "@react-google-maps/api";
 import places from "../Data/Places";
 import "../Styles/Discover.css";
 import MapStyle from "../Styles/MapStyle";
@@ -16,7 +16,7 @@ const center = {
 
 function Discover() {
   const [selectedPlace, setSelectedPlace] = useState(null);
-  const infoRef = useRef(null); // For smooth scroll
+  const infoRef = useRef(null); 
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -48,24 +48,51 @@ function Discover() {
             styles: MapStyle,
           }}
         >
-          {places.map((place) => (
-            <Marker
-              key={place.id}
-              position={place.location}
-              icon={{
-                url: "https://img.icons8.com/sf-regular-filled/48/3f6572/google-maps-new.png", // Dusty blue icon
-                scaledSize: new window.google.maps.Size(40, 40),
-              }}
-              onClick={() => handleMarkerClick(place)}
-            />
-          ))}
+          {places.map((place) => {
+
+            const firstTag = place.tags[0];
+            let iconUrl;
+
+            switch (firstTag) {
+              case "Attractions":
+                iconUrl = "https://img.icons8.com/?size=100&id=8LbaJ1j48pyk&format=png&color=33525c"; 
+              break;
+              case "Farm Stalls":
+                iconUrl = "https://img.icons8.com/?size=100&id=8LbaJ1j48pyk&format=png&color=33525c"; 
+              break;
+              case "Restaurants":
+                iconUrl = "https://img.icons8.com/?size=100&id=8694&format=png&color=33525c"; 
+              break;
+              case "Gas Stations":
+                iconUrl = "https://img.icons8.com/?size=100&id=60669&format=png&color=33525c"; 
+              break;
+              case "Mechanics":
+                iconUrl = "https://img.icons8.com/?size=100&id=90568&format=png&color=33525c"; 
+              break;
+              default:
+              iconUrl = "https://img.icons8.com/?size=100&id=7880&format=png&color=33525c";
+            }
+
+            return (
+              <OverlayView
+                key={place.id}
+                position={place.location}
+                mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+              >
+              <div className="custom-marker-wrapper" onClick={() => handleMarkerClick(place)}>
+                <img src={iconUrl} alt={place.name} className="custom-marker-icon" />
+                <div className="custom-tooltip">{place.name}</div>
+              </div>
+              </OverlayView>
+            );
+          })}
         </GoogleMap>
       </div>
 
       {selectedPlace && (
         <div ref={infoRef} className="place-details">
-          <h2>{selectedPlace.name}</h2>
-          <p>⭐ {selectedPlace.rating}</p>
+          <h2>{selectedPlace.name} ⭐ {selectedPlace.rating}</h2>
+          <p>{selectedPlace.province}</p>
           <p ref={infoRef} className="place-info">{selectedPlace.description}</p>
           <img
             src={selectedPlace.image}
