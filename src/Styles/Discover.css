@@ -27,13 +27,13 @@
 /* CSS For Discover Page */
 
 body {
-  background-color: #d3d1bd;
+  background-color: #ebe6dc;
   margin: 0;               
   padding: 0;
 }
 
 .discover-page {
-  background-image: url('../Images/General/landscape6.png');
+  background-image: url('../Images/General/landscape8.png');
   background-repeat: no-repeat;
   background-size: auto;           
   background-position: top center; 
@@ -48,7 +48,7 @@ body {
 
 .discover-heading {
   margin-top: 50px;
-  color: #4d7c8b;
+  color: #406774;
   font-family: 'KleinCondensed1', sans-serif;
   position: relative;
   font-size: 3rem;
@@ -76,7 +76,7 @@ body {
 .place-details {
   font-family: 'KleinCondensed4', sans-serif;
   letter-spacing: 1.5px;  
-  background-color: #557e8c;
+  background-color: #355d77;
   padding: 1rem;
   border-radius: 10px;
   max-width: 500px;

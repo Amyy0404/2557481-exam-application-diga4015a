@@ -27,7 +27,7 @@
 /* CSS For Discover Page */
 
 .deadzones-page {
-  background-image: url('../Images/General/landscape5.png');
+  background-image: url('../Images/General/landscape6.png');
   background-repeat: no-repeat;
   background-size: auto;           
   background-position: top center; 
@@ -43,7 +43,7 @@
 
 .deadzones-heading {
   margin-top: 50px;
-  color: #e99014;
+  color: #aa906c;
   font-family: 'KleinCondensed1', sans-serif;
   position: relative;
   font-size: 3rem;
@@ -55,7 +55,7 @@
   font-family: 'KleinCondensed2', sans-serif;
   margin-top: 1.5rem;
   font-size: 1.2rem;
-  color: #cc7d0e;
+  color: #947e5e;
   letter-spacing: 2px;
 }
 

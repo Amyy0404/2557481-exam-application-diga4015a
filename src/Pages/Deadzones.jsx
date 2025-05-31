@@ -1,10 +1,12 @@
 import React from "react";
-import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
-import "../Styles/Deadzones.css"; 
+import { GoogleMap, Polygon, useJsApiLoader } from "@react-google-maps/api";
+import "../Styles/Deadzones.css";
+import MapStyle from "../MapStyle"; // ✅ Import your custom map style
+import deadzoneData from "../MockData/DeadzoneData"; // ✅ New deadzone data
 
 const center = {
-  lat: -26.2041, 
-  lng: 28.0473, 
+  lat: -26.2041,
+  lng: 28.0473,
 };
 
 const mapContainerStyle = {
@@ -31,9 +33,21 @@ function Deadzones() {
           mapContainerStyle={mapContainerStyle}
           center={center}
           zoom={10}
+          options={{ styles: MapStyle }} // ✅ Apply the custom style
         >
-          {/* Example marker */}
-          <Marker position={center} />
+          {deadzoneData.map((zone, index) => (
+            <Polygon
+              key={index}
+              paths={zone.paths}
+              options={{
+                fillColor: "#FF0000",
+                fillOpacity: 0.3,
+                strokeColor: "#FF0000",
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+              }}
+            />
+          ))}
         </GoogleMap>
       </div>
       <div style={{ height: "200px" }}></div>
