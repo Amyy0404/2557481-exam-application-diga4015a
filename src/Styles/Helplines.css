@@ -1,0 +1,80 @@
+.helplines-page {
+  background: linear-gradient(to bottom, #ebe6dc, #cfc7b7);
+  background-image: url('../Images/General/landscape7.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.helplines-heading {
+  margin-top: 50px;
+  color: #37603e;
+  font-family: 'KleinCondensed1', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+.helplines-subheading {
+  font-family: 'KleinCondensed2', sans-serif;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #4c8255;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+.province-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.province-button {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  text-align: center;
+}
+
+.province-button:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.province-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.5rem;
+}
+
+.province-name {
+  display: block;
+  font-family: 'KleinCondensed2', sans-serif;
+  font-size: 1.1rem;
+  color: #3f6572;
+  margin-bottom: 0.5rem;
+}
+
+.hover-text {
+  display: none;
+  font-size: 0.9rem;
+  color: #777;
+  font-family: 'KleinCondensed3', sans-serif;
+}
+
+.province-button:hover .hover-text {
+  display: block;
+  margin-top: 0.5rem;
+}
