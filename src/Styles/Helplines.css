@@ -1,3 +1,43 @@
+/* My Fonts */
+
+@font-face {
+  font-family: 'KleinCondensed1';
+  src: url('../Fonts/KleinCondensed1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+
+@font-face {
+  font-family: 'KleinCondensed2';
+  src: url('../Fonts/KleinCondensed2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'KleinCondensed3';
+  src: url('../Fonts/KleinCondensed3.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'KleinCondensed4';
+  src: url('../Fonts/KleinCondensed4.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* CSS For Helplines Page */
+
+body {
+  overflow-x: hidden;
+}
+
 .helplines-page {
   background: linear-gradient(to bottom, #ebe6dc, #cfc7b7);
   background-image: url('../Images/General/landscape7.png');
@@ -28,9 +68,14 @@
   margin-bottom: 2rem;
 }
 
+.province-wrapper {
+  text-align: center;
+  position: relative;
+}
+
 .province-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   max-width: 1000px;
   margin: 0 auto;
@@ -38,9 +83,12 @@
 }
 
 .province-button {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   background-color: white;
   border-radius: 12px;
-  padding: 1rem;
+  padding: 1.5rem;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -54,8 +102,8 @@
 }
 
 .province-icon {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   margin-bottom: 0.5rem;
 }
 
@@ -68,13 +116,35 @@
 }
 
 .hover-text {
-  display: none;
+  height: 1.2rem;
+  margin-top: 0.5rem;
   font-size: 0.9rem;
-  color: #777;
+  color: #ffffff;
   font-family: 'KleinCondensed3', sans-serif;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.province-button:hover .hover-text {
-  display: block;
-  margin-top: 0.5rem;
+.province-wrapper:hover .hover-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Responsive CSS */
+
+@media (max-width: 1024px) {
+  .province-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .province-grid {
+    grid-template-columns: 1fr; 
+  }
+
+  .helplines-heading {
+    font-size: 2.5rem; 
+  }
 }

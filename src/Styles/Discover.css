@@ -125,3 +125,11 @@ body {
 .custom-marker-wrapper:hover .custom-tooltip {
   opacity: 1;
 }
+
+/* Responsive CSS */
+
+@media (max-width: 768px) {
+  .discover-heading {
+    font-size: 2.5rem; 
+  }
+}

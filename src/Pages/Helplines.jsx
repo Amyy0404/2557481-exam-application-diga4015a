@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from 'react';
 import "../Styles/Helplines.css";
 
 const provinces = [
@@ -17,6 +18,10 @@ const provinces = [
 function Helplines() {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="helplines-page">
       <h1 className="helplines-heading">HELPLINES</h1>
@@ -25,21 +30,23 @@ function Helplines() {
       </p>
 
       <div className="province-grid">
-        {provinces.map((province, index) => (
-          <div
-            key={index}
-            className="province-button"
-            onClick={() => navigate("/HelplinesMap")}
-          >
-            <img
-              src={require(`../Images/Provinces/${province.image}`)}
-              alt={province.name}
-              className="province-icon"
-            />
-            <span className="province-name">{province.name}</span>
-            <div className="hover-text">{province.hoverText}</div>
-          </div>
-        ))}
+{provinces.map((province, index) => (
+  <div key={index} className="province-wrapper">
+    <div
+      className="province-button"
+      onClick={() => navigate("/helplinesmap")}
+    >
+      <img
+        src={require(`../Images/Provinces/${province.image}`)}
+        alt={province.name}
+        className="province-icon"
+      />
+      <span className="province-name">{province.name}</span>
+    </div>
+    <div className="hover-text">{province.hoverText}</div>
+  </div>
+))}
+
       </div>
     </div>
   );

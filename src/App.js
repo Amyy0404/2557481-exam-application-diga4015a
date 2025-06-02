@@ -10,6 +10,7 @@ import Search from "./Pages/Search";
 import Discover from "./Pages/Discover";
 import Deadzones from "./Pages/Deadzones";
 import Helplines from "./Pages/Helplines";
+import HelplinesMap from "./Pages/HelplinesMap";
 import { AuthProvider } from "./Auth/AuthContext";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/discover" element={<Discover />} />
           <Route path="/deadzones" element={<Deadzones />} />
           <Route path="/helplines" element={<Helplines />} />
+          <Route path="/helplinesmap" element={<HelplinesMap />} />
           <Route path="*" element={<h1>404 - Page Not Found</h1>} />
         </Routes>
       </Router>
