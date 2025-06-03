@@ -10,11 +10,6 @@ const mapContainerStyle = {
   height: "500px",
 };
 
-const center = {
-  lat: -30.5595,
-  lng: 22.9375,
-};
-
 const provinceCenters = {
   "GAUTENG": { lat: -26.2708, lng: 28.1123, zoom: 9 },
   "WESTERN CAPE": { lat: -33.9180, lng: 18.4233, zoom: 9 },

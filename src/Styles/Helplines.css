@@ -86,7 +86,7 @@ body {
   margin-top: 2rem;
   margin-left: 2rem;
   margin-right: 2rem;
-  background-color: white;
+  background-color: #fffbf4;
   border-radius: 12px;
   padding: 1.5rem;
   cursor: pointer;
@@ -110,7 +110,7 @@ body {
 .province-name {
   display: block;
   font-family: 'KleinCondensed2', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   color: #3f6572;
   margin-bottom: 0.5rem;
 }
@@ -118,9 +118,10 @@ body {
 .hover-text {
   height: 1.2rem;
   margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #ffffff;
+  font-size: 1rem;
+  color: #fffbf4;
   font-family: 'KleinCondensed3', sans-serif;
+  letter-spacing: 2px;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s ease;
