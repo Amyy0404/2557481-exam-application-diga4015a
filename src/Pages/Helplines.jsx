@@ -4,15 +4,15 @@ import { useEffect } from 'react';
 import "../Styles/Helplines.css";
 
 const provinces = [
-  { name: "Gauteng", image: "gauteng.png", hoverText: "Help in Gauteng" },
-  { name: "Western Cape", image: "westerncape.png", hoverText: "Help in Western Cape" },
-  { name: "KwaZulu-Natal", image: "kzn.png", hoverText: "Help in KZN" },
-  { name: "Eastern Cape", image: "easterncape.png", hoverText: "Help in Eastern Cape" },
-  { name: "Free State", image: "freestate.png", hoverText: "Help in Free State" },
-  { name: "Limpopo", image: "limpopo.png", hoverText: "Help in Limpopo" },
-  { name: "Mpumalanga", image: "mpumalanga.png", hoverText: "Help in Mpumalanga" },
-  { name: "North West", image: "northwest.png", hoverText: "Help in North West" },
-  { name: "Northern Cape", image: "northerncape.png", hoverText: "Help in Northern Cape" },
+  { name: "GAUTENG", image: "gauteng.png", hoverText: "Help in Gauteng" },
+  { name: "WESTERN CAPE", image: "westerncape.png", hoverText: "Help in Western Cape" },
+  { name: "KWAZULU-NATAL", image: "kzn.png", hoverText: "Help in KZN" },
+  { name: "EASTERN CAPE", image: "easterncape.png", hoverText: "Help in Eastern Cape" },
+  { name: "FREE STATE", image: "freestate.png", hoverText: "Help in Free State" },
+  { name: "LIMPOPO", image: "limpopo.png", hoverText: "Help in Limpopo" },
+  { name: "MPUMALANGA", image: "mpumalanga.png", hoverText: "Help in Mpumalanga" },
+  { name: "NORTH WEST", image: "northwest.png", hoverText: "Help in North West" },
+  { name: "NORTHERN CAPE", image: "northerncape.png", hoverText: "Help in Northern Cape" },
 ];
 
 function Helplines() {
@@ -34,7 +34,7 @@ function Helplines() {
   <div key={index} className="province-wrapper">
     <div
       className="province-button"
-      onClick={() => navigate("/helplinesmap")}
+      onClick={() => navigate("/helplinesmap", { state: { province: province.name } })}
     >
       <img
         src={require(`../Images/Provinces/${province.image}`)}

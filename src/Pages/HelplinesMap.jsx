@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { GoogleMap, useJsApiLoader, OverlayView } from "@react-google-maps/api";
+import { useLocation } from "react-router-dom";
 import places from "../Data/Places";
 import "../Styles/HelplinesMap.css";
 import MapStyle from "../Styles/MapStyle";
@@ -12,6 +13,18 @@ const mapContainerStyle = {
 const center = {
   lat: -30.5595,
   lng: 22.9375,
+};
+
+const provinceCenters = {
+  "GAUTENG": { lat: -26.2708, lng: 28.1123, zoom: 9 },
+  "WESTERN CAPE": { lat: -33.9180, lng: 18.4233, zoom: 9 },
+  "KWAZULU-NATAL": { lat: -29.8587, lng: 31.0218, zoom: 8 },
+  "EASTERN CAPE": { lat: -32.2968, lng: 26.4194, zoom: 7 },
+  "FREE STATE": { lat: -28.4541, lng: 26.7968, zoom: 7 },
+  "LIMPOPO": { lat: -23.4016, lng: 29.4179, zoom: 7 },
+  "MPUMALANGA": { lat: -25.5653, lng: 30.5274, zoom: 8 },
+  "NORTH WEST": { lat: -25.3390, lng: 25.6628, zoom: 7 },
+  "NORTHERN CAPE": { lat: -29.0462, lng: 21.8569, zoom: 6 },
 };
 
 const relevantTags = [
@@ -27,6 +40,13 @@ function HelplinesMap() {
     libraries: ["places"],
   });
 
+  const location = useLocation();
+  const selectedProvince = location.state?.province;
+
+  const mapCenter = selectedProvince && provinceCenters[selectedProvince]
+    ? provinceCenters[selectedProvince]
+    : { lat: -30.5595, lng: 22.9375, zoom: 6 };
+
   const handleMarkerClick = (place) => {
     setSelectedPlace(place);
     setTimeout(() => {
@@ -41,15 +61,15 @@ function HelplinesMap() {
   );
 
   return (
-    <div className="helplines-page">
-      <h1 className="helplines-heading">HELPLINES</h1>
-      <p className="helplines-subheading">Click on any pin to find roadside help, fast.</p>
+    <div className="helplinesMap-page">
+      <h1 className="helplinesMap-heading">HELPLINES</h1>
+      <p className="helplinesMap-subheading">Click on any pin to find roadside help, fast.</p>
 
       <div className="map-container">
         <GoogleMap
           mapContainerStyle={mapContainerStyle}
-          center={center}
-          zoom={6}
+          center={{ lat: mapCenter.lat, lng: mapCenter.lng }}
+          zoom={mapCenter.zoom}
           options={{
             styles: MapStyle,
           }}

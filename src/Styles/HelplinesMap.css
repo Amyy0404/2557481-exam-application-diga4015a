@@ -40,7 +40,7 @@ body {
   padding: 0;
 }
 
-.helplines-page {
+.helplinesMap-page {
   background-image: url('../Images/General/landscape9.png');
   background-repeat: no-repeat;
   background-size: auto;
@@ -53,8 +53,8 @@ body {
   box-sizing: border-box;
 }
 
-.helplines-heading {
-  margin-top: 50px;
+.helplinesMap-heading {
+  margin-top: 110px;
   color: #406774;
   font-family: 'KleinCondensed1', sans-serif;
   font-size: 3rem;
@@ -62,9 +62,8 @@ body {
   letter-spacing: 4px;
 }
 
-.helplines-subheading {
+.helplinesMap-subheading {
   font-family: 'KleinCondensed2', sans-serif;
-  margin-top: 1.5rem;
   font-size: 1.2rem;
   color: #3f6572;
   letter-spacing: 2px;
