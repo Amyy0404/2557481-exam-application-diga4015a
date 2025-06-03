@@ -7,7 +7,6 @@
   font-style: normal;
   font-display: swap; 
 }
-
 @font-face {
   font-family: 'KleinCondensed2';
   src: url('../Fonts/KleinCondensed2.ttf') format('truetype');
@@ -15,7 +14,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: 'KleinCondensed3';
   src: url('../Fonts/KleinCondensed3.ttf') format('truetype');
@@ -125,11 +123,9 @@
 .feature-card {
   background-color: rgb(246, 246, 246);
   border-radius: 15px;
-  padding: 0.1rem;
   text-align: center;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); 
   cursor: pointer;
-  transition: all 0.3s ease;
   aspect-ratio: 1/1;
   display: flex;
   flex-direction: column;
@@ -137,12 +133,13 @@
   align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .icon-circle {
-  width: 90px;
-  height: 90px;
+  margin-top: -35px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  margin: 0 auto 1rem;
-  background-color: #e0d1bb;
+  background-color: rgb(246, 246, 246);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 60%;
@@ -151,26 +148,23 @@
 .icon-search {
   background-image: url('../Images/Icons/SearchIcon.png');
 }
-
 .icon-discover {
   background-image: url('../Images/Icons/DiscoverIcon.png');
 }
-
 .icon-deadzones {
   background-image: url('../Images/Icons/DeadZonesIcon.png');
 }
-
 .icon-helplines {
   background-image: url('../Images/Icons/HelplinesIcon.png');
 }
 
 .feature-card h3 {
+  margin-top: 5px;
   font-family: 'KleinCondensed3', sans-serif; 
   font-size: 1.7rem;
   margin-bottom: 0.5rem;
   color: #333;
   letter-spacing: 0.5px;
-  line-height: 1.3;
 }
 
 .feature-card p {
@@ -195,14 +189,6 @@
     max-width: 800px;
     margin-top: -80px;
   }
-  
-  .navbar {
-    padding: 15px;
-  }
-  
-  .nav-links button {
-    font-size: 12px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -210,23 +196,23 @@
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
   }
-  
+
   .feature-buttons {
     grid-template-columns: 1fr;
     margin-top: -50px;
     max-width: 400px;
     gap: 1rem;
   }
-  
+
   .navbar {
     padding: 10px;
   }
-  
+
   .nav-links button {
     font-size: 11px;
     margin-right: 5px;
   }
-  
+
   .login-button {
     width: 25px;
     height: 25px;
@@ -239,11 +225,11 @@
     min-height: 400px;
     padding-top: 60px;
   }
-  
+
   .hero-section h1 {
     font-size: 2rem;
   }
-  
+
   .learn-more {
     padding: 0.6rem 1.5rem;
     font-size: 1rem;

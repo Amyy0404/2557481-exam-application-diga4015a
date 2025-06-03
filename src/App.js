@@ -1,7 +1,9 @@
 import React from "react";
 import {  BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
+
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Profile from "./Pages/Profile";
@@ -11,7 +13,8 @@ import Discover from "./Pages/Discover";
 import Deadzones from "./Pages/Deadzones";
 import Helplines from "./Pages/Helplines";
 import HelplinesMap from "./Pages/HelplinesMap";
-import { AuthProvider } from "./Auth/AuthContext";
+
+import { AuthProvider } from "./Auth/AuthContext";// Wrapping everything in Auth context to manage login state  
 
 function App() {
   return (
@@ -29,7 +32,8 @@ function App() {
           <Route path="/deadzones" element={<Deadzones />} />
           <Route path="/helplines" element={<Helplines />} />
           <Route path="/helplinesmap" element={<HelplinesMap />} />
-          <Route path="*" element={<h1>404 - Page Not Found</h1>} />
+          
+          <Route path="*" element={<h1>404 - Page Not Found</h1>} /> {/* Fallback for unknown routes */}
         </Routes>
       </Router>
     </AuthProvider>

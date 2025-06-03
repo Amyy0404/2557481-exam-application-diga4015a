@@ -11,7 +11,7 @@
 
   const mapContainerStyle = {
     width: "100%",
-    height: "550px",
+    height: "470px",
   };
 
   function Deadzones() {

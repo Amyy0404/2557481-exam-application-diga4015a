@@ -34,7 +34,7 @@ function Helplines() {
   <div key={index} className="province-wrapper">
     <div
       className="province-button"
-      onClick={() => navigate("/helplinesmap", { state: { province: province.name } })}
+      onClick={() => navigate("/helplinesmap", { state: { province: province.name } })} 
     >
       <img
         src={require(`../Images/Provinces/${province.image}`)}
