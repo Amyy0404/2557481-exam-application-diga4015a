@@ -8,6 +8,16 @@ import AloeIMG from "../Images/Data/Attraction3.png"
 import BaobabIMG from "../Images/Data/Sleep1.png"
 import MadibaIMG from "../Images/Data/Police1.png"
 import BraaiIMG from "../Images/Data/Restaurant2.png"
+import ProteaFireImg from "../Images/Data/ProteaFireImg.png"
+import BunduAmbulanceImg from "../Images/Data/BunduAmbulanceImg.png"
+import SunsetPoliceImg from "../Images/Data/SunsetPoliceImg.png"
+import SavannaBreezeImg from "../Images/Data/SavannaBreezeImg.png"
+import DesertBloomImg from "../Images/Data/DesertBloomImg.png"
+import GogoPadstalImg from "../Images/Data/GogoPadstalImg.png"
+import MadalaImg from "../Images/Data/MadalaImg.png"
+import LekkerBraaiImg from "../Images/Data/LekkerBraaiImg.png"
+import NamaquaWatchImg from "../Images/Data/NamaquaWatchImg.png"
+import TsitsikammaTrailImg from "../Images/Data/TsitsikammaTrailImg.png"
 
 const places = [
   {
@@ -119,6 +129,116 @@ const places = [
     rating: 4.3,
     image: BraaiIMG,
     location: { lat: -26.234302, lng: 27.9492187 },
+  },
+  {
+    id: 11,
+    name: "Protea Fire & Rescue",
+    province: "Western Cape",
+    category: "Fire Station",
+    tags: ["Firefighters", "Emergency Services", "Open 24/7"],
+    description: "Dedicated to keeping the Cape safe, Protea Fire & Rescue is equipped with rapid response vehicles and heroic hearts.",
+    rating: 4.6,
+    image: ProteaFireImg,
+    location: { lat: -33.915, lng: 18.423 },
+  },
+  {
+    id: 12,
+    name: "Bundu Ambulance Base",
+    province: "Mpumalanga",
+    category: "Ambulance Station",
+    tags: ["Ambulance", "Emergency Services", "Open 24/7"],
+    description: "Fast, focused, and reliable, the Bundu Ambulance Base serves rural communities with care and speed.",
+    rating: 4.7,
+    image: BunduAmbulanceImg,
+    location: { lat: -25.464, lng: 30.985 },
+  },
+  {
+    id: 13,
+    name: "Sunset Police Station",
+    province: "KwaZulu-Natal",
+    category: "Police Station",
+    tags: ["Police Stations", "Open 24/7"],
+    description: "Overlooking the beach, Sunset Police Station is a safe haven for tourists and locals alike.",
+    rating: 4.2,
+    image: SunsetPoliceImg,
+    location: { lat: -29.8587, lng: 31.0218 },
+  },
+  {
+    id: 14,
+    name: "Savanna Breeze Café",
+    province: "Free State",
+    category: "Restaurant",
+    tags: ["Restaurants", "Hidden Gems", "Local Cuisine"],
+    description: "Tucked between cornfields and sandstone cliffs, this cozy café dishes up homemade potjie and sweet milk tart.",
+    rating: 4.5,
+    image: SavannaBreezeImg,
+    location: { lat: -28.827, lng: 26.675 },
+  },
+  {
+    id: 15,
+    name: "Desert Bloom Oasis",
+    province: "Northern Cape",
+    category: "Point of Interest",
+    tags: ["Attractions", "Hidden Gems"],
+    description: "A surprising splash of green in the arid desert, this oasis is a haven for birdwatchers and weary travelers.",
+    rating: 4.8,
+    image: DesertBloomImg,
+    location: { lat: -29.667, lng: 21.208 },
+  },
+  {
+    id: 16,
+    name: "Gogo’s Padstal & Crafts",
+    province: "Limpopo",
+    category: "Farm Stall",
+    tags: ["Farm Stalls", "Local Cuisine", "Family-Friendly"],
+    description: "Stop by for dried mango, biltong, beadwork, and Gogo’s famous vetkoek. A Limpopo must-stop!",
+    rating: 4.4,
+    image: GogoPadstalImg,
+    location: { lat: -23.905, lng: 29.434 },
+  },
+  {
+    id: 17,
+    name: "Madala's Mechanics",
+    province: "North West",
+    category: "Mechanic",
+    tags: ["Mechanics", "Open 24/7"],
+    description: "Trusted across the province for quick diagnostics and old-school mechanical wisdom.",
+    rating: 4.6,
+    image: MadalaImg,
+    location: { lat: -25.653, lng: 26.248 },
+  },
+  {
+    id: 18,
+    name: "Lekker Braai Stop",
+    province: "Gauteng",
+    category: "Restaurant",
+    tags: ["Restaurants", "Family-Friendly", "Local Cuisine"],
+    description: "Get your fill of boerewors rolls, grilled mielies, and smoky sosaties under the shade of acacia trees.",
+    rating: 4.5,
+    image: LekkerBraaiImg,
+    location: { lat: -25.999, lng: 28.093 },
+  },
+  {
+    id: 19,
+    name: "Namaqua Watch Police Post",
+    province: "Northern Cape",
+    category: "Police Station",
+    tags: ["Police Stations", "Open 24/7"],
+    description: "A vital outpost in the arid heartland—friendly, firm, and always alert.",
+    rating: 4.0,
+    image: NamaquaWatchImg,
+    location: { lat: -30.598, lng: 17.931 },
+  },
+  {
+    id: 20,
+    name: "Tsitsikamma Trail Gateway",
+    province: "Eastern Cape",
+    category: "Point of Interest",
+    tags: ["Attractions", "Hidden Gems", "Family-Friendly"],
+    description: "Start your adventure into thick forests, swinging bridges, and mountain streams at this scenic trailhead.",
+    rating: 4.9,
+    image: TsitsikammaTrailImg,
+    location: { lat: -33.971, lng: 23.888 },
   }
 ];
 

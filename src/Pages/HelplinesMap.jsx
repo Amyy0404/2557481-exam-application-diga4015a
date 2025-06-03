@@ -23,7 +23,7 @@ const provinceCenters = {
 };
 
 const relevantTags = [
-  "Police", "Ambulance", "Firefighters", "Mechanics", "Towing", "Emergency", "Roadside Help"
+  "Police Stations ", "Ambulance", "Firefighters", "Mechanics", "Towing", "Emergency", "Roadside Help"
 ];
 
 function HelplinesMap() {
@@ -72,16 +72,14 @@ function HelplinesMap() {
           {filteredPlaces.map((place) => {
             let iconUrl;
 
-            if (place.tags.includes("Police")) {
-              iconUrl = "https://img.icons8.com/?size=100&id=38265&format=png&color=33525c";
+            if (place.tags.includes("Police Stations")) {
+              iconUrl = "https://img.icons8.com/?size=100&id=xPo6rVUASS8n&format=png&color=33525c";
             } else if (place.tags.includes("Ambulance")) {
-              iconUrl = "https://img.icons8.com/?size=100&id=787&format=png&color=33525c";
+              iconUrl = "https://img.icons8.com/?size=100&id=8741&format=png&color=33525c";
             } else if (place.tags.includes("Firefighters")) {
-              iconUrl = "https://img.icons8.com/?size=100&id=9903&format=png&color=33525c";
+              iconUrl = "https://img.icons8.com/?size=100&id=60985&format=png&color=33525c";
             } else if (place.tags.includes("Mechanics")) {
               iconUrl = "https://img.icons8.com/?size=100&id=90568&format=png&color=33525c";
-            } else if (place.tags.includes("Towing")) {
-              iconUrl = "https://img.icons8.com/?size=100&id=103861&format=png&color=33525c";
             } else {
               iconUrl = "https://img.icons8.com/?size=100&id=7880&format=png&color=33525c";
             }
