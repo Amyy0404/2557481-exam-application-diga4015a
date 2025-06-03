@@ -116,8 +116,11 @@ body {
 }
 
 .hover-text {
+  text-align: left;
+  white-space: pre-line;
   height: 1.2rem;
   margin-top: 0.5rem;
+  margin-left: 30px;
   font-size: 1rem;
   color: #fffbf4;
   font-family: 'KleinCondensed3', sans-serif;

@@ -22,12 +22,10 @@ const provinceCenters = {
   "NORTHERN CAPE": { lat: -29.0462, lng: 21.8569, zoom: 6 },
 };
 
-const relevantTags = [
-  "Police Stations ", "Ambulance", "Firefighters", "Mechanics", "Towing", "Emergency", "Roadside Help"
-];
+const allowedTags = ["Police Stations", "Ambulance", "Firefighters", "Gas Stations", "Mechanics"];
 
 function HelplinesMap() {
-  const [selectedPlace, setSelectedPlace] = useState(null);
+  const [setSelectedPlace] = useState(null);
   const infoRef = useRef(null);
 
   const { isLoaded } = useJsApiLoader({
@@ -51,10 +49,6 @@ function HelplinesMap() {
 
   if (!isLoaded) return <div>Loading Map...</div>;
 
-  const filteredPlaces = places.filter(place =>
-    place.tags.some(tag => relevantTags.includes(tag))
-  );
-
   return (
     <div className="helplinesMap-page">
       <h1 className="helplinesMap-heading">HELPLINES</h1>
@@ -69,21 +63,31 @@ function HelplinesMap() {
             styles: MapStyle,
           }}
         >
-          {filteredPlaces.map((place) => {
-            let iconUrl;
+      {places
+        .filter(place => place.tags.some(tag => allowedTags.includes(tag)))
+        .map((place) => {
+        const firstTag = place.tags[0];
+        let iconUrl;
 
-            if (place.tags.includes("Police Stations")) {
-              iconUrl = "https://img.icons8.com/?size=100&id=xPo6rVUASS8n&format=png&color=33525c";
-            } else if (place.tags.includes("Ambulance")) {
-              iconUrl = "https://img.icons8.com/?size=100&id=8741&format=png&color=33525c";
-            } else if (place.tags.includes("Firefighters")) {
-              iconUrl = "https://img.icons8.com/?size=100&id=60985&format=png&color=33525c";
-            } else if (place.tags.includes("Mechanics")) {
-              iconUrl = "https://img.icons8.com/?size=100&id=90568&format=png&color=33525c";
-            } else {
-              iconUrl = "https://img.icons8.com/?size=100&id=7880&format=png&color=33525c";
-            }
-
+          switch (firstTag) {
+            case "Police Stations":
+              iconUrl = "https://img.icons8.com/?size=100&id=8665&format=png&color=33525c"; 
+            break;
+            case "Ambulance":
+              iconUrl = "https://img.icons8.com/?size=100&id=8741&format=png&color=33525c"; 
+            break;
+            case "Firefighters":
+              iconUrl = "https://img.icons8.com/?size=100&id=60985&format=png&color=33525c"; 
+            break;
+            case "Gas Stations":
+              iconUrl = "https://img.icons8.com/?size=100&id=60669&format=png&color=33525c"; 
+            break;
+            case "Mechanics":
+              iconUrl = "https://img.icons8.com/?size=100&id=90568&format=png&color=33525c"; 
+            break;
+          default:
+            iconUrl = "https://img.icons8.com/?size=100&id=7880&format=png&color=33525c";
+          }
             return (
               <OverlayView
                 key={place.id}
@@ -92,31 +96,13 @@ function HelplinesMap() {
               >
                 <div className="custom-marker-wrapper" onClick={() => handleMarkerClick(place)}>
                   <img src={iconUrl} alt={place.name} className="custom-marker-icon" />
-                  <div className="custom-tooltip">{place.name}</div>
+                  <div className="custom-tooltip">{place.name}<br></br>{place.contact}</div>
                 </div>
               </OverlayView>
             );
           })}
         </GoogleMap>
       </div>
-
-      {selectedPlace && (
-        <div ref={infoRef} className="place-details">
-          <h2>{selectedPlace.name} ⭐ {selectedPlace.rating}</h2>
-          <p>{selectedPlace.province}</p>
-          <p className="place-info">{selectedPlace.description}</p>
-          <img
-            src={selectedPlace.image}
-            alt={selectedPlace.name}
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-              borderRadius: "10px",
-              marginTop: "1rem",
-            }}
-          />
-        </div>
-      )}
     </div>
   );
 }

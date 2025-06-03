@@ -7,7 +7,7 @@ function About() {
 
       <div className="hero-section">
         <h1>About Us</h1>
-        <p className="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+        <p className="quote">Discover the reason behind the road.</p>
       </div>
 
       <div className="image-row">
@@ -28,8 +28,17 @@ function About() {
       <div className="story-section">
         <h2>Our Story...</h2>
         <div className="story-columns">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+          <p>South Africa is a land of breathtaking landscapes, small-town gems, and unexpected adventures—but not every journey goes as 
+            smoothly as planned. I created this app because I believe that road trips should be more than just getting from A to B—they 
+            should be safer, richer, and full of meaningful stops along the way. Too often, travelers miss out on hidden treasures—farmstalls 
+            tucked behind dusty turnoffs, friendly local mechanics, or the perfect picnic spot with a view—simply because they didn’t know 
+            they were there. At the same time,</p>
+          <p>a sudden loss of signal or not knowing who to call in an emergency can turn a relaxing drive into a stressful detour. My app 
+            brings all that local knowledge and practical support into one place. Built with South African road users in mind, it blends 
+            real needs with real stories—highlighting everything from must-see attractions to vital helplines and areas where cellphone 
+            coverage vanishes. Whether you're exploring familiar provinces or venturing off the beaten path, my goal is to make sure every 
+            trip feels informed, supported, and full of possibility.Because on South African roads, it’s not just the destination that 
+            matters—it’s the road that takes you there.</p>
         </div>
       </div>
     </div>

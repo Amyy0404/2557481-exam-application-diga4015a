@@ -4,15 +4,51 @@ import { useEffect } from 'react';
 import "../Styles/Helplines.css";
 
 const provinces = [
-  { name: "GAUTENG", image: "gauteng.png", hoverText: "Help in Gauteng" },
-  { name: "WESTERN CAPE", image: "westerncape.png", hoverText: "Help in Western Cape" },
-  { name: "KWAZULU-NATAL", image: "kzn.png", hoverText: "Help in KZN" },
-  { name: "EASTERN CAPE", image: "easterncape.png", hoverText: "Help in Eastern Cape" },
-  { name: "FREE STATE", image: "freestate.png", hoverText: "Help in Free State" },
-  { name: "LIMPOPO", image: "limpopo.png", hoverText: "Help in Limpopo" },
-  { name: "MPUMALANGA", image: "mpumalanga.png", hoverText: "Help in Mpumalanga" },
-  { name: "NORTH WEST", image: "northwest.png", hoverText: "Help in North West" },
-  { name: "NORTHERN CAPE", image: "northerncape.png", hoverText: "Help in Northern Cape" },
+  { 
+    name: "GAUTENG", 
+    image: "gauteng.png", 
+    hoverText: "Police: 10111\nAmbulance & Fire: 011 375 5911\nAA Assistance: 0861 000 234" 
+  },
+  { 
+    name: "WESTERN CAPE", 
+    image: "westerncape.png", 
+    hoverText: "Ambulance: 10177\nFire Brigade: 107\nAA Assistance: 0861 000 234" 
+  },
+  { 
+    name: "KWAZULU-NATAL", 
+    image: "kzn.png", 
+    hoverText: "Ambulance: 10177\nFire Brigade: 10177\nAA Assistance: 0861 000 234" 
+  },
+  { 
+    name: "EASTERN CAPE", 
+    image: "easterncape.png", 
+    hoverText: "Police: 10111\nAmbulance: 10177\nFire Brigade: 10177" 
+  },
+  { 
+    name: "FREE STATE", 
+    image: "freestate.png", 
+    hoverText: "Police: 10111\nFire Brigade: 10177\nAA Assistance: 0861 000 234" 
+  },
+  { 
+    name: "LIMPOPO", 
+    image: "limpopo.png", 
+    hoverText: "Police: 10111\nFire Brigade: 015 293 1111\nAmbulance: 10177" 
+  },
+  { 
+    name: "MPUMALANGA", 
+    image: "mpumalanga.png", 
+    hoverText: "Police: 10111\nFire Brigade: 10177\nAA Assistance: 0861 000 234" 
+  },
+  { 
+    name: "NORTH WEST", 
+    image: "northwest.png", 
+    hoverText: "Police: 10111\nAmbulance: 10177\nFire Brigade: 10177" 
+  },
+  { 
+    name: "NORTHERN CAPE", 
+    image: "northerncape.png", 
+    hoverText: "Police: 10111\nFire Brigade: 10177\nAA Assistance: 0861 000 234" 
+  },
 ];
 
 function Helplines() {

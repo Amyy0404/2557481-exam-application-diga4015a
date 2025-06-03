@@ -41,6 +41,7 @@ const places = [
     rating: 4.2,
     image: OasisIMG,
     location: { lat: -28.294707, lng: 21.983642 },
+    contact: "061 234 5678"
   },
   {
     id: 3,
@@ -52,6 +53,7 @@ const places = [
     rating: 4.7,
     image: EishIMG,
     location: { lat: -23.644524, lng: 29.6301269 },
+    contact: "072 987 6543"
   },
   {
     id: 4,
@@ -74,6 +76,7 @@ const places = [
     rating: 4.3,
     image: MzansiIMG,
     location: { lat: -26.672004, lng: 27.2131347 },
+    contact: "082 345 6789"
   },
   {
     id: 6,
@@ -118,6 +121,7 @@ const places = [
     rating: 4.1,
     image: MadibaIMG,
     location: { lat: -33.548262, lng: 18.9678955 },
+    contact: "076 543 2198"
   },
   {
     id: 10,
@@ -140,6 +144,7 @@ const places = [
     rating: 4.6,
     image: ProteaFireImg,
     location: { lat: -33.915, lng: 18.423 },
+    contact: "060 112 3344"
   },
   {
     id: 12,
@@ -151,6 +156,7 @@ const places = [
     rating: 4.7,
     image: BunduAmbulanceImg,
     location: { lat: -25.464, lng: 30.985 },
+    contact: "071 556 7788"
   },
   {
     id: 13,
@@ -162,6 +168,7 @@ const places = [
     rating: 4.2,
     image: SunsetPoliceImg,
     location: { lat: -29.8587, lng: 31.0218 },
+    contact: "083 998 7766"
   },
   {
     id: 14,
@@ -206,6 +213,7 @@ const places = [
     rating: 4.6,
     image: MadalaImg,
     location: { lat: -25.653, lng: 26.248 },
+    contact: "079 123 4567"
   },
   {
     id: 18,
@@ -228,6 +236,7 @@ const places = [
     rating: 4.0,
     image: NamaquaWatchImg,
     location: { lat: -30.598, lng: 17.931 },
+    contact: "062 445 6677"
   },
   {
     id: 20,

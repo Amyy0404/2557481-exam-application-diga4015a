@@ -5,7 +5,7 @@ import searchIcon from "../Images/Icons/SearchIcon2.png";
 
 const categories = [
   "Restaurants", "Open 24/7", "Police Stations", "Gas Stations", "Local Cuisine",
-  "Farm Stalls", "Hidden Gems", "Mechanics", "Attractions", "Family-Friendly", "Sleep"
+  "Farm Stalls", "Hidden Gems", "Mechanics", "Attractions", "Family-Friendly", "Sleep", "Emergency Services"
 ];
 
 const provinces = [...new Set(places.map(place => place.province))];
