@@ -201,6 +201,14 @@ body {
 
 /* Responsive CSS */
 
+@media (min-width: 768px) {
+  .search-navbar .nav-links button,
+  .search-navbar .about-button,
+  .search-navbar .login-label {
+    color: #edf2ee;
+  }
+}
+
 @media (max-width: 992px) {
   .hero {
     height: 45vh;

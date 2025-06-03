@@ -1,9 +1,10 @@
-/* Base styles */
+/* CSS For Navbar */
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 2px;
   position: fixed;
   top: 0;
   left: 0;
@@ -13,7 +14,6 @@
   transition: background-color 0.3s ease;
 }
 
-/* Navbar sections */
 .navbar-left {
   display: flex;
   align-items: center;
@@ -25,7 +25,6 @@
   gap: 15px;
 }
 
-/* Navigation links */
 .nav-links {
   display: flex;
   gap: 15px;
@@ -44,16 +43,14 @@
   font-weight: bold;
 }
 
-/* Opacity for inactive items */
 .faded {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .faded:hover {
   opacity: 1;
 }
 
-/* Login/Profile button */
 .login-button-container {
   display: flex;
   flex-direction: column;
@@ -81,7 +78,6 @@
   letter-spacing: 2px;
 }
 
-/* Hamburger for mobile */
 .hamburger {
   display: none;
   font-size: 24px;
@@ -91,18 +87,15 @@
   cursor: pointer;
 }
 
-/* Color overrides for Search page */
-.search-navbar .nav-links button,
-.search-navbar .about-button,
-.search-navbar .login-label {
-  color: #edf2ee;
+.search-navbar .hamburger {
+  color: #edf2ee; 
 }
 
 .search-navbar .faded {
   opacity: 0.5;
 }
 
-/* Responsive styles */
+/* Responsive CSS */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -111,7 +104,7 @@
     position: absolute;
     top: 60px;
     left: 20px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
