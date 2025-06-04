@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef, useEffect } from "react"; 
 import { FavouritesContext } from "../Auth/FavouritesContext";
 import places from "../Data/Places";
 import "../Styles/Search.css";
@@ -19,13 +19,23 @@ function Search() {
   const [activeFilters, setActiveFilters] = useState([]);
   const [selectedProvinces, setSelectedProvinces] = useState([]);
 
-  // Toggle category filter on/off 
+  const resultsRef = useRef(null);
+
+  // Scroll to results section
+  const scrollToResults = () => {
+    if (resultsRef.current) {
+      resultsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  // Toggle category filter on/off
   const toggleFilter = (filter) => {
     setActiveFilters((prev) =>
       prev.includes(filter)
-        ? prev.filter(f => f !== filter)  
-        : [...prev, filter]              
+        ? prev.filter(f => f !== filter)
+        : [...prev, filter]
     );
+    scrollToResults(); //Scroll when a filter is clicked
   };
 
   const toggleProvince = (province) => {
@@ -34,6 +44,7 @@ function Search() {
         ? prev.filter(p => p !== province)
         : [...prev, province]
     );
+    scrollToResults(); 
   };
 
   const filteredPlaces = places.filter(place =>
@@ -61,7 +72,12 @@ function Search() {
           type="text"
           placeholder="Search by name..."
           value={query}
-          onChange={(e) => setQuery(e.target.value)}  
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              scrollToResults();
+            }
+          }}
         />
       </div>
 
@@ -97,7 +113,7 @@ function Search() {
         </button>
       </div>
 
-      <div className="results">
+      <div className="results" ref={resultsRef}>
         {filteredPlaces.map((place) => (
           <div key={place.id} className="place-card">
             <img src={place.image} alt={place.name} />
@@ -125,4 +141,5 @@ function Search() {
 }
 
 export default Search;
+
 

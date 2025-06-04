@@ -117,11 +117,10 @@ function Discover() {
           <button
             onClick={() => {
               toggleLike(selectedPlace.id);
-              // Update selectedPlace after toggle for UI 
-              const updatedPlace = places.find((p) => p.id === selectedPlace.id);
-              if (updatedPlace) {
-                setSelectedPlace(updatedPlace);
-              }
+              setSelectedPlace(prev => ({
+                ...prev,
+                isLiked: !prev.isLiked,
+              }));
             }}
             className="like-button"
           >

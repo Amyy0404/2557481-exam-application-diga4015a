@@ -100,10 +100,8 @@ function HelplinesMap() {
                   position={place.location}
                   mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
                 >
-                  <div 
-                    className="custom-marker-wrapper" 
-                    onClick={() => handleMarkerClick(place)} // Open info box on click
-                  >
+                  <div className="custom-marker-wrapper non-clickable">
+                    
                     <img src={iconUrl} alt={place.name} className="custom-marker-icon" />
                     <div className="custom-tooltip">
                       {place.name}<br />{place.contact}
