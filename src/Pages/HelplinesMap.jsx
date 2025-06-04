@@ -10,6 +10,7 @@ const mapContainerStyle = {
   height: "500px",
 };
 
+// Coordinates & zoom levels for each province 
 const provinceCenters = {
   "GAUTENG": { lat: -26.2708, lng: 28.1123, zoom: 9 },
   "WESTERN CAPE": { lat: -33.9180, lng: 18.4233, zoom: 9 },
@@ -22,9 +23,11 @@ const provinceCenters = {
   "NORTHERN CAPE": { lat: -29.0462, lng: 21.8569, zoom: 6 },
 };
 
+// Only show places with these tags on the map
 const allowedTags = ["Police Stations", "Ambulance", "Firefighters", "Gas Stations", "Mechanics"];
 
 function HelplinesMap() {
+  // State to track which place is selected (for info display)
   const [setSelectedPlace] = useState(null);
   const infoRef = useRef(null);
 
@@ -40,6 +43,7 @@ function HelplinesMap() {
     ? provinceCenters[selectedProvince]
     : { lat: -30.5595, lng: 22.9375, zoom: 6 };
 
+  // When clicked, set selected place & scroll info box into view smoothly
   const handleMarkerClick = (place) => {
     setSelectedPlace(place);
     setTimeout(() => {
@@ -60,47 +64,54 @@ function HelplinesMap() {
           center={{ lat: mapCenter.lat, lng: mapCenter.lng }}
           zoom={mapCenter.zoom}
           options={{
-            styles: MapStyle,
+            styles: MapStyle, 
           }}
         >
-      {places
-        .filter(place => place.tags.some(tag => allowedTags.includes(tag)))
-        .map((place) => {
-        const firstTag = place.tags[0];
-        let iconUrl;
+          {places
+            .filter(place => place.tags.some(tag => allowedTags.includes(tag))) 
+            .map((place) => {
+              const firstTag = place.tags[0];
+              let iconUrl;
 
-          switch (firstTag) {
-            case "Police Stations":
-              iconUrl = "https://img.icons8.com/?size=100&id=8665&format=png&color=33525c"; 
-            break;
-            case "Ambulance":
-              iconUrl = "https://img.icons8.com/?size=100&id=8741&format=png&color=33525c"; 
-            break;
-            case "Firefighters":
-              iconUrl = "https://img.icons8.com/?size=100&id=60985&format=png&color=33525c"; 
-            break;
-            case "Gas Stations":
-              iconUrl = "https://img.icons8.com/?size=100&id=60669&format=png&color=33525c"; 
-            break;
-            case "Mechanics":
-              iconUrl = "https://img.icons8.com/?size=100&id=90568&format=png&color=33525c"; 
-            break;
-          default:
-            iconUrl = "https://img.icons8.com/?size=100&id=7880&format=png&color=33525c";
-          }
-            return (
-              <OverlayView
-                key={place.id}
-                position={place.location}
-                mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
-              >
-                <div className="custom-marker-wrapper" onClick={() => handleMarkerClick(place)}>
-                  <img src={iconUrl} alt={place.name} className="custom-marker-icon" />
-                  <div className="custom-tooltip">{place.name}<br></br>{place.contact}</div>
-                </div>
-              </OverlayView>
-            );
-          })}
+              // Icon URL based on first tag of place
+              switch (firstTag) {
+                case "Police Stations":
+                  iconUrl = "https://img.icons8.com/?size=100&id=8665&format=png&color=33525c"; 
+                  break;
+                case "Ambulance":
+                  iconUrl = "https://img.icons8.com/?size=100&id=8741&format=png&color=33525c"; 
+                  break;
+                case "Firefighters":
+                  iconUrl = "https://img.icons8.com/?size=100&id=60985&format=png&color=33525c"; 
+                  break;
+                case "Gas Stations":
+                  iconUrl = "https://img.icons8.com/?size=100&id=60669&format=png&color=33525c"; 
+                  break;
+                case "Mechanics":
+                  iconUrl = "https://img.icons8.com/?size=100&id=90568&format=png&color=33525c"; 
+                  break;
+                default:
+                  iconUrl = "https://img.icons8.com/?size=100&id=7880&format=png&color=33525c";
+              }
+
+              return (
+                <OverlayView
+                  key={place.id}
+                  position={place.location}
+                  mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+                >
+                  <div 
+                    className="custom-marker-wrapper" 
+                    onClick={() => handleMarkerClick(place)} // Open info box on click
+                  >
+                    <img src={iconUrl} alt={place.name} className="custom-marker-icon" />
+                    <div className="custom-tooltip">
+                      {place.name}<br />{place.contact}
+                    </div>
+                  </div>
+                </OverlayView>
+              );
+            })}
         </GoogleMap>
       </div>
     </div>
@@ -108,3 +119,4 @@ function HelplinesMap() {
 }
 
 export default HelplinesMap;
+

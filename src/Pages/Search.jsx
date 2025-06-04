@@ -4,6 +4,7 @@ import places from "../Data/Places";
 import "../Styles/Search.css";
 import searchIcon from "../Images/Icons/SearchIcon2.png";
 
+// List of categories for filtering
 const categories = [
   "Restaurants", "Open 24/7", "Police Stations", "Gas Stations", "Local Cuisine",
   "Farm Stalls", "Hidden Gems", "Mechanics", "Attractions", "Family-Friendly", "Sleep", "Emergency Services"
@@ -13,15 +14,17 @@ const provinces = [...new Set(places.map(place => place.province))];
 
 function Search() {
   const { places, toggleLike } = useContext(FavouritesContext);
+
   const [query, setQuery] = useState("");
   const [activeFilters, setActiveFilters] = useState([]);
   const [selectedProvinces, setSelectedProvinces] = useState([]);
 
+  // Toggle category filter on/off 
   const toggleFilter = (filter) => {
     setActiveFilters((prev) =>
       prev.includes(filter)
-        ? prev.filter(f => f !== filter)
-        : [...prev, filter]
+        ? prev.filter(f => f !== filter)  
+        : [...prev, filter]              
     );
   };
 
@@ -39,9 +42,10 @@ function Search() {
     (selectedProvinces.length === 0 || selectedProvinces.includes(place.province))
   );
 
+  // Reset all filters at once
   const resetFilters = () => {
-  setActiveFilters([]);
-  setSelectedProvinces([]);
+    setActiveFilters([]);
+    setSelectedProvinces([]);
   };
 
   return (
@@ -57,7 +61,7 @@ function Search() {
           type="text"
           placeholder="Search by name..."
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => setQuery(e.target.value)}  
         />
       </div>
 
@@ -66,7 +70,7 @@ function Search() {
         {categories.map((cat) => (
           <button
             key={cat}
-            className={`filter-button ${activeFilters.includes(cat) ? "active" : ""}`}
+            className={`filter-button ${activeFilters.includes(cat) ? "active" : ""}`} // Highlight active filters
             onClick={() => toggleFilter(cat)}
           >
             {cat}
@@ -79,7 +83,7 @@ function Search() {
         {provinces.map((prov) => (
           <button
             key={prov}
-            className={`filter-button ${selectedProvinces.includes(prov) ? "active" : ""}`}
+            className={`filter-button ${selectedProvinces.includes(prov) ? "active" : ""}`} // Highlight active provinces
             onClick={() => toggleProvince(prov)}
           >
             {prov}
@@ -101,13 +105,14 @@ function Search() {
             <p><strong>Province:</strong> {place.province}</p>
             <p>⭐ {place.rating}</p>
             <p className="place-description">{place.description}</p>
+
             <button onClick={() => toggleLike(place.id)} className="like-button">
               <img
                 src={
                   place.isLiked
-                    ? "https://img.icons8.com/?size=100&id=85138&format=png&color=993a24"
+                    ? "https://img.icons8.com/?size=100&id=85138&format=png&color=993a24" 
                     : "https://img.icons8.com/?size=100&id=85038&format=png&color=993a24"
-                  }
+                }
                 alt={place.isLiked ? "Liked" : "Not liked"}
                 className="heart-icon"
               />

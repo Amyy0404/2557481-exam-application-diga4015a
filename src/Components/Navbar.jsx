@@ -6,22 +6,22 @@ import "../Styles/Navbar.css";
 function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { user } = useAuth();
+  const { user } = useAuth(); // get current user 
 
-  const [menuOpen, setMenuOpen] = useState(false);
-  const isSearchPage = location.pathname === "/search";
+  const [menuOpen, setMenuOpen] = useState(false); 
+  const isSearchPage = location.pathname === "/search"; // apply special style if on search page because of background
 
   const handleAuthButtonClick = () => {
-    navigate(user ? "/profile" : "/login");
-    setMenuOpen(false);
+    navigate(user ? "/profile" : "/login"); // go to profile if logged in, else login
+    setMenuOpen(false); // close menu after navigating
   };
 
   const handleNavigate = (path) => {
-    navigate(path);
-    setMenuOpen(false);
+    navigate(path); 
+    setMenuOpen(false); 
   };
 
-  const isActive = (path) => location.pathname === path;
+  const isActive = (path) => location.pathname === path; 
 
   return (
     <nav className={`navbar ${isSearchPage ? "search-navbar" : ""}`}>
@@ -71,7 +71,7 @@ function Navbar() {
         >
           ABOUT
         </button>
-         <button
+        <button
           className={`about-button ${!isActive("/favourites") ? "faded" : ""}`}
           onClick={() => handleNavigate("/favourites")}
         >
@@ -80,7 +80,7 @@ function Navbar() {
 
         <div className="login-button-container">
           <button className="login-button" onClick={handleAuthButtonClick}></button>
-          <span className="login-label">{user ? "PROFILE" : "LOGIN"}</span>
+          <span className="login-label">{user ? "PROFILE" : "LOGIN"}</span> {/* label updates based on auth */}
         </div>
       </div>
     </nav>
@@ -88,3 +88,4 @@ function Navbar() {
 }
 
 export default Navbar;
+

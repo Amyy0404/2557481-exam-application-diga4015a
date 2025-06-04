@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
 import "../Styles/Helplines.css";
 
+// List of provinces 
 const provinces = [
   { 
     name: "GAUTENG", 
@@ -54,6 +55,7 @@ const provinces = [
 function Helplines() {
   const navigate = useNavigate();
 
+  // Scroll to top — ensures user starts at top of the page
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -66,26 +68,28 @@ function Helplines() {
       </p>
 
       <div className="province-grid">
-{provinces.map((province, index) => (
-  <div key={index} className="province-wrapper">
-    <div
-      className="province-button"
-      onClick={() => navigate("/helplinesmap", { state: { province: province.name } })} 
-    >
-      <img
-        src={require(`../Images/Provinces/${province.image}`)}
-        alt={province.name}
-        className="province-icon"
-      />
-      <span className="province-name">{province.name}</span>
-    </div>
-    <div className="hover-text">{province.hoverText}</div>
-  </div>
-))}
+        {provinces.map((province, index) => (
+          <div key={index} className="province-wrapper">
+            <div
+              className="province-button"
+              onClick={() => navigate("/helplinesmap", { state: { province: province.name } })} 
+            >
+              <img
+                src={require(`../Images/Provinces/${province.image}`)}
+                alt={province.name}
+                className="province-icon"
+              />
+              <span className="province-name">{province.name}</span>
+            </div>
 
+            {/* Show emergency contact numbers */}
+            <div className="hover-text">{province.hoverText}</div>
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
 export default Helplines;
+

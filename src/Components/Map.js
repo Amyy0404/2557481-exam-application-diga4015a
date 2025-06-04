@@ -12,6 +12,7 @@ const center = {
 };
 
 function MapComponent() {
+  // Hook to load Google Maps API script with my API key
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -22,8 +23,11 @@ function MapComponent() {
       <Marker position={center} />
     </GoogleMap>
   ) : (
+    // Placeholder while map loads
     <p>Loading map...</p>
   );
 }
 
+// Prevent unnecessary re-renders
 export default React.memo(MapComponent);
+

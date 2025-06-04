@@ -1,6 +1,6 @@
 import React, { useState, useRef, useContext } from "react";
 import { FavouritesContext } from "../Auth/FavouritesContext";
-import { GoogleMap, useJsApiLoader, OverlayView  } from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, OverlayView } from "@react-google-maps/api";
 
 import "../Styles/Discover.css";
 import MapStyle from "../Styles/MapStyle";
@@ -10,6 +10,7 @@ const mapContainerStyle = {
   height: "550px",
 };
 
+// Center of the map (South Africa coordinates)
 const center = {
   lat: -30.5595,
   lng: 22.9375,
@@ -17,8 +18,11 @@ const center = {
 
 function Discover() {
   const { places, toggleLike } = useContext(FavouritesContext);
+
+  // Manage which place is currently selected for showing details
   const [selectedPlace, setSelectedPlace] = useState(null);
-  const infoRef = useRef(null); 
+
+  const infoRef = useRef(null);
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -32,7 +36,7 @@ function Discover() {
     }, 100);
   };
 
-  if (!isLoaded) return <div>Loading Map...</div>;
+  if (!isLoaded) return <div>Loading Map...</div>; // Show loading state until map is ready
 
   return (
     <div className="discover-page">
@@ -47,44 +51,45 @@ function Discover() {
           center={center}
           zoom={6}
           options={{
-            styles: MapStyle,
+            styles: MapStyle, // Apply custom map styles imported from MapStyle.js
           }}
         >
           {places.map((place) => {
-
             const firstTag = place.tags[0];
             let iconUrl;
 
+            // Different icon URLs based on place tag
             switch (firstTag) {
               case "Attractions":
-                iconUrl = "https://img.icons8.com/?size=100&id=8LbaJ1j48pyk&format=png&color=33525c"; 
-              break;
+                iconUrl = "https://img.icons8.com/?size=100&id=8LbaJ1j48pyk&format=png&color=33525c";
+                break;
               case "Farm Stalls":
-                iconUrl = "https://img.icons8.com/?size=100&id=8LbaJ1j48pyk&format=png&color=33525c"; 
-              break;
+                iconUrl = "https://img.icons8.com/?size=100&id=8LbaJ1j48pyk&format=png&color=33525c";
+                break;
               case "Restaurants":
-                iconUrl = "https://img.icons8.com/?size=100&id=8694&format=png&color=33525c"; 
-              break;
+                iconUrl = "https://img.icons8.com/?size=100&id=8694&format=png&color=33525c";
+                break;
               case "Gas Stations":
-                iconUrl = "https://img.icons8.com/?size=100&id=60669&format=png&color=33525c"; 
-              break;
+                iconUrl = "https://img.icons8.com/?size=100&id=60669&format=png&color=33525c";
+                break;
               case "Mechanics":
-                iconUrl = "https://img.icons8.com/?size=100&id=90568&format=png&color=33525c"; 
-              break;
+                iconUrl = "https://img.icons8.com/?size=100&id=90568&format=png&color=33525c";
+                break;
               default:
-              iconUrl = "https://img.icons8.com/?size=100&id=7880&format=png&color=33525c";
+                iconUrl = "https://img.icons8.com/?size=100&id=7880&format=png&color=33525c";
             }
 
+            // Custom marker with icon and tooltip
             return (
               <OverlayView
                 key={place.id}
                 position={place.location}
                 mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
               >
-              <div className="custom-marker-wrapper" onClick={() => handleMarkerClick(place)}>
-                <img src={iconUrl} alt={place.name} className="custom-marker-icon" />
-                <div className="custom-tooltip">{place.name}</div>
-              </div>
+                <div className="custom-marker-wrapper" onClick={() => handleMarkerClick(place)}>
+                  <img src={iconUrl} alt={place.name} className="custom-marker-icon" />
+                  <div className="custom-tooltip">{place.name}</div>
+                </div>
               </OverlayView>
             );
           })}
@@ -93,9 +98,11 @@ function Discover() {
 
       {selectedPlace && (
         <div ref={infoRef} className="place-details">
+          {/* Show place details and rating */}
           <h2>{selectedPlace.name} ⭐ {selectedPlace.rating}</h2>
           <p>{selectedPlace.province}</p>
           <p ref={infoRef} className="place-info">{selectedPlace.description}</p>
+
           <img
             src={selectedPlace.image}
             alt={selectedPlace.name}
@@ -106,22 +113,27 @@ function Discover() {
               marginTop: "1rem",
             }}
           />
-          <button onClick={() => {
-            toggleLike(selectedPlace.id);
+
+          <button
+            onClick={() => {
+              toggleLike(selectedPlace.id);
+              // Update selectedPlace after toggle for UI 
               const updatedPlace = places.find((p) => p.id === selectedPlace.id);
               if (updatedPlace) {
                 setSelectedPlace(updatedPlace);
               }
-            }} className="like-button">
-              <img
-                src={
-                  selectedPlace.isLiked
-                    ? "https://img.icons8.com/?size=100&id=85138&format=png&color=c73838"
-                    : "https://img.icons8.com/?size=100&id=85038&format=png&color=c73838"
-                  }
-                alt={selectedPlace.isLiked ? "Liked" : "Not liked"}
-                className="heart-icon"
-              />
+            }}
+            className="like-button"
+          >
+            <img
+              src={
+                selectedPlace.isLiked
+                  ? "https://img.icons8.com/?size=100&id=85138&format=png&color=c73838"
+                  : "https://img.icons8.com/?size=100&id=85038&format=png&color=c73838"
+              }
+              alt={selectedPlace.isLiked ? "Liked" : "Not liked"}
+              className="heart-icon"
+            />
           </button>
         </div>
       )}

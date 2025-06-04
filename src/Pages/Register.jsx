@@ -5,24 +5,28 @@ import { Link } from "react-router-dom";
 import "../Styles/Register.css";
 
 function Register() {
+  // State to hold user inputs and errors
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate();
-  const { login } = useAuth();
+  
+  const navigate = useNavigate(); // Redirect user after registration
+  const { login } = useAuth(); 
 
+  // Handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
+    
     if (firstName && lastName && email && password) {
       login({
         email,
-        name: `${firstName} ${lastName}`,
+        name: `${firstName} ${lastName}`, 
       });
-      navigate("/profile");
+      navigate("/profile"); 
     } else {
-      setError("Please fill in all fields");
+      setError("Please fill in all fields"); 
     }
   };
 
