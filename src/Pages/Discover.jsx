@@ -1,6 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
+import { FavouritesContext } from "../Auth/FavouritesContext";
 import { GoogleMap, useJsApiLoader, OverlayView  } from "@react-google-maps/api";
-import places from "../Data/Places";
+
 import "../Styles/Discover.css";
 import MapStyle from "../Styles/MapStyle";
 
@@ -15,6 +16,7 @@ const center = {
 };
 
 function Discover() {
+  const { places, toggleLike } = useContext(FavouritesContext);
   const [selectedPlace, setSelectedPlace] = useState(null);
   const infoRef = useRef(null); 
 
@@ -104,6 +106,9 @@ function Discover() {
               marginTop: "1rem",
             }}
           />
+          <button onClick={() => toggleLike(selectedPlace.id)} className="like-button">
+              {selectedPlace.isLiked ? "❤️" : "🤍"}
+            </button>
         </div>
       )}
     </div>

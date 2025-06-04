@@ -71,6 +71,12 @@ function Navbar() {
         >
           ABOUT
         </button>
+         <button
+          className={`favourites-button ${!isActive("/favourites") ? "faded" : ""}`}
+          onClick={() => handleNavigate("/favourites")}
+        >
+          FAVOURITES
+        </button>
 
         <div className="login-button-container">
           <button className="login-button" onClick={handleAuthButtonClick}></button>

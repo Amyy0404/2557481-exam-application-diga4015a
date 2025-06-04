@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { FavouritesProvider } from "./Auth/FavouritesContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <FavouritesProvider>
   <React.StrictMode>
     <App />
   </React.StrictMode>
+  </FavouritesProvider>
 );
 
 reportWebVitals();

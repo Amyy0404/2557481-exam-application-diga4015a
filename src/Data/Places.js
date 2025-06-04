@@ -30,6 +30,7 @@ const places = [
     rating: 4.5,
     image: UbuntuIMG,
     location: { lat: -33.93766, lng: 25.36605 },
+    isLiked: false,
   },
   {
     id: 2,
@@ -41,6 +42,7 @@ const places = [
     rating: 4.2,
     image: OasisIMG,
     location: { lat: -28.294707, lng: 21.983642 },
+    isLiked: false,
     contact: "061 234 5678"
   },
   {
@@ -53,6 +55,7 @@ const places = [
     rating: 4.7,
     image: EishIMG,
     location: { lat: -23.644524, lng: 29.6301269 },
+    isLiked: false,
     contact: "072 987 6543"
   },
   {
@@ -65,6 +68,7 @@ const places = [
     rating: 4.7,
     image: ChakalakaIMG,
     location: { lat: -27.639740, lng: 29.81964111 },
+    isLiked: false,
   },
   {
     id: 5,
@@ -76,6 +80,7 @@ const places = [
     rating: 4.3,
     image: MzansiIMG,
     location: { lat: -26.672004, lng: 27.2131347 },
+    isLiked: false,
     contact: "082 345 6789"
   },
   {
@@ -88,6 +93,7 @@ const places = [
     rating: 4.8,
     image: AloeIMG,
     location: { lat: -32.708733, lng: 28.0206298 },
+    isLiked: false,
   },
   {
     id: 7,
@@ -99,6 +105,7 @@ const places = [
     rating: 4.9,
     image: BaobabIMG,
     location: { lat: -31.3090617, lng: 20.97290039 },
+    isLiked: false,
   },
   {
     id: 8,
@@ -110,6 +117,7 @@ const places = [
     rating: 4.4,
     image: KoeksisterIMG,
     location: { lat: -28.52662241, lng: 26.59790039 },
+    isLiked: false,
   },
   {
     id: 9,
@@ -121,6 +129,7 @@ const places = [
     rating: 4.1,
     image: MadibaIMG,
     location: { lat: -33.548262, lng: 18.9678955 },
+    isLiked: false,
     contact: "076 543 2198"
   },
   {
@@ -133,6 +142,7 @@ const places = [
     rating: 4.3,
     image: BraaiIMG,
     location: { lat: -26.234302, lng: 27.9492187 },
+    isLiked: false,
   },
   {
     id: 11,
@@ -144,6 +154,7 @@ const places = [
     rating: 4.6,
     image: ProteaFireImg,
     location: { lat: -33.915, lng: 18.423 },
+    isLiked: false,
     contact: "060 112 3344"
   },
   {
@@ -156,6 +167,7 @@ const places = [
     rating: 4.7,
     image: BunduAmbulanceImg,
     location: { lat: -25.464, lng: 30.985 },
+    isLiked: false,
     contact: "071 556 7788"
   },
   {
@@ -168,6 +180,7 @@ const places = [
     rating: 4.2,
     image: SunsetPoliceImg,
     location: { lat: -29.8587, lng: 31.0218 },
+    isLiked: false,
     contact: "083 998 7766"
   },
   {
@@ -180,6 +193,7 @@ const places = [
     rating: 4.5,
     image: SavannaBreezeImg,
     location: { lat: -28.827, lng: 26.675 },
+    isLiked: false,
   },
   {
     id: 15,
@@ -191,6 +205,7 @@ const places = [
     rating: 4.8,
     image: DesertBloomImg,
     location: { lat: -29.667, lng: 21.208 },
+    isLiked: false,
   },
   {
     id: 16,
@@ -202,6 +217,7 @@ const places = [
     rating: 4.4,
     image: GogoPadstalImg,
     location: { lat: -23.905, lng: 29.434 },
+    isLiked: false,
   },
   {
     id: 17,
@@ -213,6 +229,7 @@ const places = [
     rating: 4.6,
     image: MadalaImg,
     location: { lat: -25.653, lng: 26.248 },
+    isLiked: false,
     contact: "079 123 4567"
   },
   {
@@ -225,6 +242,7 @@ const places = [
     rating: 4.5,
     image: LekkerBraaiImg,
     location: { lat: -25.999, lng: 28.093 },
+    isLiked: false,
   },
   {
     id: 19,
@@ -236,6 +254,7 @@ const places = [
     rating: 4.0,
     image: NamaquaWatchImg,
     location: { lat: -30.598, lng: 17.931 },
+    isLiked: false,
     contact: "062 445 6677"
   },
   {
@@ -248,6 +267,7 @@ const places = [
     rating: 4.9,
     image: TsitsikammaTrailImg,
     location: { lat: -33.971, lng: 23.888 },
+    isLiked: false,
   }
 ];
 

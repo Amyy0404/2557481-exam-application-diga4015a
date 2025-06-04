@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { FavouritesContext } from "../Auth/FavouritesContext";
 import places from "../Data/Places";
 import "../Styles/Search.css";
 import searchIcon from "../Images/Icons/SearchIcon2.png";
@@ -11,6 +12,7 @@ const categories = [
 const provinces = [...new Set(places.map(place => place.province))];
 
 function Search() {
+  const { places, toggleLike } = useContext(FavouritesContext);
   const [query, setQuery] = useState("");
   const [activeFilters, setActiveFilters] = useState([]);
   const [selectedProvinces, setSelectedProvinces] = useState([]);
@@ -98,9 +100,10 @@ function Search() {
             <h2>{place.name}</h2>
             <p><strong>Province:</strong> {place.province}</p>
             <p>⭐ {place.rating}</p>
-            <p className="place-description">
-              {place.description}
-            </p>
+            <p className="place-description">{place.description}</p>
+            <button onClick={() => toggleLike(place.id)} className="like-button">
+              {place.isLiked ? "❤️" : "🤍"}
+            </button>
           </div>
         ))}
       </div>
