@@ -45,7 +45,6 @@ body {
   box-sizing: border-box;
 }
 
-
 .discover-heading {
   margin-top: 50px;
   color: #406774;
@@ -124,6 +123,23 @@ body {
 
 .custom-marker-wrapper:hover .custom-tooltip {
   opacity: 1;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.like-button:focus {
+  outline: none;
+}
+
+.heart-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 /* Responsive CSS */

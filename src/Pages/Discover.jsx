@@ -106,9 +106,23 @@ function Discover() {
               marginTop: "1rem",
             }}
           />
-          <button onClick={() => toggleLike(selectedPlace.id)} className="like-button">
-              {selectedPlace.isLiked ? "❤️" : "🤍"}
-            </button>
+          <button onClick={() => {
+            toggleLike(selectedPlace.id);
+              const updatedPlace = places.find((p) => p.id === selectedPlace.id);
+              if (updatedPlace) {
+                setSelectedPlace(updatedPlace);
+              }
+            }} className="like-button">
+              <img
+                src={
+                  selectedPlace.isLiked
+                    ? "https://img.icons8.com/?size=100&id=85138&format=png&color=c73838"
+                    : "https://img.icons8.com/?size=100&id=85038&format=png&color=c73838"
+                  }
+                alt={selectedPlace.isLiked ? "Liked" : "Not liked"}
+                className="heart-icon"
+              />
+          </button>
         </div>
       )}
     </div>

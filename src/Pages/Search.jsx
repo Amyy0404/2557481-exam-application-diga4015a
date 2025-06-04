@@ -105,8 +105,8 @@ function Search() {
               <img
                 src={
                   place.isLiked
-                    ? "https://img.icons8.com/?size=100&id=7697&format=png&color=33525c"
-                    : "https://img.icons8.com/?size=100&id=87&format=png&color=33525c"
+                    ? "https://img.icons8.com/?size=100&id=85138&format=png&color=993a24"
+                    : "https://img.icons8.com/?size=100&id=85038&format=png&color=993a24"
                   }
                 alt={place.isLiked ? "Liked" : "Not liked"}
                 className="heart-icon"
