@@ -102,7 +102,15 @@ function Search() {
             <p>⭐ {place.rating}</p>
             <p className="place-description">{place.description}</p>
             <button onClick={() => toggleLike(place.id)} className="like-button">
-              {place.isLiked ? "❤️" : "🤍"}
+              <img
+                src={
+                  place.isLiked
+                    ? "https://img.icons8.com/?size=100&id=7697&format=png&color=33525c"
+                    : "https://img.icons8.com/?size=100&id=87&format=png&color=33525c"
+                  }
+                alt={place.isLiked ? "Liked" : "Not liked"}
+                className="heart-icon"
+              />
             </button>
           </div>
         ))}

@@ -13,7 +13,7 @@ import Discover from "./Pages/Discover";
 import Deadzones from "./Pages/Deadzones";
 import Helplines from "./Pages/Helplines";
 import HelplinesMap from "./Pages/HelplinesMap";
-import Favourites from "./Auth/FavouritesContext";
+import Favourites from "./Pages/Favourites";
 
 import { AuthProvider } from "./Auth/AuthContext";// Wrapping everything in Auth context to manage login state  
 

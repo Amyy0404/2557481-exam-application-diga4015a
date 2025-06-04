@@ -199,6 +199,12 @@ body {
   line-height: 1.4;
 }
 
+.heart-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
 /* Responsive CSS */
 
 @media (min-width: 768px) {
