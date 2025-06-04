@@ -72,7 +72,7 @@ function Navbar() {
           ABOUT
         </button>
          <button
-          className={`favourites-button ${!isActive("/favourites") ? "faded" : ""}`}
+          className={`about-button ${!isActive("/favourites") ? "faded" : ""}`}
           onClick={() => handleNavigate("/favourites")}
         >
           FAVOURITES
