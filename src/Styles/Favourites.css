@@ -37,6 +37,10 @@
 
 body {
   background-color: #ebe6dc;
+  background-image: url('../Images/General/background.png');
+  background-repeat: repeat;         
+  background-size: 130px 130px;           
+  background-position: top left;
   margin: 0;               
   padding: 0;
 }
@@ -46,6 +50,10 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
+  background-image: url('../Images/General/background.png');
+  background-repeat: repeat;         
+  background-size: 130px 130px;           
+  background-position: top left;
 }
 
 .favourites-title {
@@ -92,4 +100,14 @@ body {
     width: "16px";
     vertical-align: "middle";
     margin-right: "5px";
+}
+
+.nav-button {
+  padding: 10px 16px;
+  background: #c73838;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin: 0 8px;
+  display: inline-block;
 }
